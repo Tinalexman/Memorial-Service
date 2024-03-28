@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import Image from "next/image";
@@ -8,6 +10,8 @@ import Navbar from "@/src/components/resuable/Navbar";
 
 import { FiArrowDown } from "react-icons/fi";
 
+import { motion } from "framer-motion";
+
 const Banner = () => {
   return (
     <div className="w-[100vw] h-fit relative bg-black">
@@ -17,7 +21,7 @@ const Banner = () => {
         className="w-[100vw] h-full md:h-[100vh] object-cover"
       />
       <div className="w-full h-full px-[100px] md:px-[5%] py-[32px] md:py-[20px] absolute z-10 top-0 left-0 flex flex-col items-center">
-        <Navbar active={-1} />
+        <Navbar />
         <div className="w-full h-full flex flex-col justify-center items-center mt-24 md:mt-16  ">
           <Image
             src={Picture}
@@ -44,7 +48,16 @@ const Banner = () => {
             Scroll to Navigate
           </h3>
           <div className="w-[35px] h-[35px] bg-primary-border-40 rounded-full flex justify-center items-center">
-          <FiArrowDown size={"16px"} className="text-primary-10"/>
+            <motion.div animate={{
+              y: ["0%", "30%", "0%"],
+              transition: {
+                ease: "easeInOut",
+                duration: 2,
+                repeat: Infinity,
+              }
+            }}>
+              <FiArrowDown size={"16px"} className="text-primary-10" />
+            </motion.div>
           </div>
         </div>
       </div>

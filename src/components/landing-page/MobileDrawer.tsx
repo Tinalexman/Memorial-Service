@@ -15,14 +15,12 @@ export interface iMobileDrawerProps {
   openedDrawer: boolean;
   closeDrawer: () => void;
   menus: iNavItem[];
-  active: number;
 }
 
 const MobileDrawer: FC<iMobileDrawerProps> = ({
   openedDrawer,
   closeDrawer,
   menus,
-  active,
 }) => {
   return (
     <>
@@ -53,13 +51,17 @@ const MobileDrawer: FC<iMobileDrawerProps> = ({
                       return (
                         <div
                           onClick={() => {
-                            window.location.assign(menu.link);
+                            const element: HTMLElement | null =
+                              document.getElementById(menu.link);
+                            element?.scrollIntoView({
+                              behavior: "smooth",
+                            });
+
+                            closeDrawer();
                           }}
                           key={i}
                           className={`cursor-pointer flex items-center gap-2 font-semibold text-[24px] leading-[36px] ${
-                            active === i
-                              ? "text-primary-base"
-                              : "text-primary-10"
+                            i === 1 ? "text-primary-base" : "text-primary-10"
                           } `}
                         >
                           <h2 className="font-normal text-[15px] leading-[22.5px] -rotate-90">
@@ -72,7 +74,7 @@ const MobileDrawer: FC<iMobileDrawerProps> = ({
                   </div>
                 </div>
 
-                <button className="text-tertiary-80 bg-primary-10 font-normal text-[20px] leading-[30px] border-2 border-primary-border-60 w-[180px] py-3 rounded-full flex justify-center items-center gap-[10px]">
+                <button className="text-tertiary-80 bg-primary-10 font-normal text-[20px] leading-[30px] w-[180px] py-3 rounded-full flex justify-center items-center gap-[10px]">
                   <div className="w-[20px] h-[20px] bg-donate-green-40 rounded-full flex items-center justify-center">
                     <div className="w-[14px] h-[14px] bg-donate-green rounded-full" />
                   </div>
