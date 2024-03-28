@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, {FC} from "react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { FaBarsStaggered } from "react-icons/fa6";
@@ -13,7 +13,11 @@ export interface iNavItem {
   link: string;
 }
 
-const Navbar = () => {
+interface iNavProp {
+  active: number;
+}
+
+const Navbar:FC<iNavProp> = ({active}) => {
   const navs: iNavItem[] = [
     {
       name: "Biography",
@@ -69,6 +73,7 @@ const Navbar = () => {
         closeDrawer={closeDrawer}
         menus={navs}
         openedDrawer={openedDrawer}
+        active={active}
       />
     </>
   );

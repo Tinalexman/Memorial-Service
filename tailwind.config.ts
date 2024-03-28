@@ -45,6 +45,7 @@ const config: Config = {
         "tertiary-90": "#121212",
         "tertiary-100": "#0b0b0b",
 
+        "primary-border-40": "rgba(246, 235, 215, 0.4)",
         "primary-border-60": "rgba(246, 235, 215, 0.6)",
         "donate-green": "#078905",
         "donate-green-40": "rgba(7, 137, 5, 0.4)"
