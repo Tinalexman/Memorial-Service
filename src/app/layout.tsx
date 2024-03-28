@@ -11,7 +11,7 @@ import {
 import "@mantine/core/styles.css";
 import { Suspense } from "react";
 
-import Loader from "@/components/resuable/Loader";
+import Loader from "@/src/components/resuable/Loader";
 
 const sora = Sora({
   subsets: ["latin"],

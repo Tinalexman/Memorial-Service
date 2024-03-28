@@ -1,11 +1,14 @@
 import React from "react";
-import Navbar from "@/components/resuable/Navbar";
-import Loader from "@/components/resuable/Loader";
+import Banner from "./Banner";
 
 const LandingPage = async () => {
-  //await new Promise((resolve) => setTimeout(resolve, 5000)); 
+  await new Promise((resolve) => setTimeout(resolve, 5000));
 
-  return <Loader />;
+  return (
+    <div className="">
+      <Banner />
+    </div>
+  );
 };
 
 export default LandingPage;
