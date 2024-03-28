@@ -58,9 +58,7 @@ export default function RootLayout({
         <ColorSchemeScript defaultColorScheme="light" />
       </head>
       <body className={sora.className}>
-        <Suspense fallback={<Loader />}>
-          <MantineProvider theme={theme}>{children}</MantineProvider>
-        </Suspense>
+        <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
   );

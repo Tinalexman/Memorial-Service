@@ -1,13 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Banner from "./Banner";
+import Loader from "../resuable/Loader";
 
 const LandingPage = async () => {
   await new Promise((resolve) => setTimeout(resolve, 5000));
 
   return (
-    <div className="">
-      <Banner />
-    </div>
+    <Suspense fallback={<Loader />}>
+      <>
+        <Banner />
+      </>
+    </Suspense>
   );
 };
 
