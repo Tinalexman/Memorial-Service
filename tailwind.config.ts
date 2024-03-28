@@ -34,6 +34,7 @@ const config: Config = {
         "secondary-100": "#1b090b",
 
         "tertiary-10": "#d7d7d7",
+        "tertiary-15": "#d9d9d9",
         "tertiary-20": "#bcbcbc",
         "tertiary-30": "#9b9b9b",
         "tertiary-40": "#7a7a7a",

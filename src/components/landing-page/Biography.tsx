@@ -9,7 +9,7 @@ const Biography = () => {
   return (
     <div
       id="biography-div"
-      className="w-[100vw] h-[100vh] md:h-auto flex flex-col px-[100px] md:px-[5%] py-24 md:pt-20 md:pb-0 bg-white relative"
+      className="w-[100vw] h-[100vh] md:h-auto flex flex-col px-[200px] md:px-[5%] py-24 md:pt-20 md:pb-0 bg-white relative"
     >
       <h3 className="text-tertiary-20 font-[700] text-[20px] md:text-[16px] leading-[30px] md:leading-[24px] md:text-center">
         BIOGRAPHY
@@ -24,7 +24,7 @@ const Biography = () => {
             cons piscing elit lorem ipsumsit.
           </span>
         </h2>
-        <div className="w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 absolute -bottom-10 md:static right-[20%] md:my-20">
+        <div className="w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 absolute -bottom-10 md:static right-[10%] md:my-20">
           <p>Read more</p>
           <BsArrowUpRight size={"16px"} />
         </div>
