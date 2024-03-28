@@ -61,7 +61,7 @@ const Navbar = () => {
         </div>
         <button className="text-primary-10 font-normal text-[20px] leading-[30px] border-2 border-primary-border-60 px-3 py-1 rounded-full flex items-center gap-[10px] md:hidden">
           <div className="w-[20px] h-[20px] bg-donate-green-40 rounded-full flex items-center justify-center">
-            <div className="w-[14px] h-[14px] bg-donate-green rounded-full" />
+            <div className="w-[10px] h-[10px] bg-donate-green rounded-full" />
           </div>
           DONATE
         </button>

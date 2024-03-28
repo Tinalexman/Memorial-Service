@@ -76,7 +76,7 @@ const MobileDrawer: FC<iMobileDrawerProps> = ({
 
                 <button className="text-tertiary-80 bg-primary-10 font-normal text-[20px] leading-[30px] w-[180px] py-3 rounded-full flex justify-center items-center gap-[10px]">
                   <div className="w-[20px] h-[20px] bg-donate-green-40 rounded-full flex items-center justify-center">
-                    <div className="w-[14px] h-[14px] bg-donate-green rounded-full" />
+                    <div className="w-[10px] h-[10px] bg-donate-green rounded-full" />
                   </div>
                   <p>DONATE</p>
                 </button>

@@ -30,7 +30,7 @@ const Biography = () => {
         </div>
         <button className="text-white bg-primary-base font-normal text-[20px] leading-[30px] w-[180px] py-3 rounded-full justify-center items-center gap-[10px] md:flex hidden md:z-10 md:mb-10">
           <div className="w-[20px] h-[20px] bg-primary-border-40 rounded-full flex items-center justify-center">
-            <div className="w-[14px] h-[14px] bg-primary-10 rounded-full" />
+            <div className="w-[10px] h-[10px] bg-primary-10 rounded-full" />
           </div>
           <p>DONATE</p>
         </button>
