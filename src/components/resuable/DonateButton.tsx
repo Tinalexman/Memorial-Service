@@ -11,7 +11,7 @@ const DonateButton: FC<iDonateProps> = ({ style, custom, useShadow }) => {
     <button
       className={` ${
         style === "outlined"
-          ? "text-primary-10 border-2 border-primary-10"
+          ? "text-primary-10 border-[1.5px] border-primary-10"
           : style === "solid pale"
           ? "bg-primary-10 text-tertiary-80"
           : "bg-primary-base text-primary-10"
