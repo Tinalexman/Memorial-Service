@@ -15,7 +15,7 @@ import DonateButton from "../resuable/DonateButton";
 
 const Banner = () => {
   return (
-    <div className="w-[100vw] h-auto relative bg-black">
+    <div className="w-[100vw] h-auto relative bg-black overflow-clip">
       <Image
         src={Background}
         alt="background"
