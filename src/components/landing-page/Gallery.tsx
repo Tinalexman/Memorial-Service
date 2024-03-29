@@ -68,11 +68,11 @@ const Gallery = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 w-full flex flex-col">
+      {/* <div className="mt-20 w-full flex flex-col">
         <DoveMarquee />
         <DoveMarquee />
         <DoveMarquee />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -47,9 +47,9 @@ const Announcement = () => {
         </div>
       </div>
 
-      <div className="mt-20 w-full">
+      {/* <div className="mt-20 w-full">
         <DoveMarquee />
-      </div>
+      </div> */}
     </div>
   );
 };

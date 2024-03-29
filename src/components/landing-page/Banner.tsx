@@ -35,7 +35,7 @@ const Banner = () => {
           />
           <div className="w-full flex flex-col items-center gap-2 mt-[52px] md:mt-8">
             <h3 className="font-light text-primary-10 text-[28px] md:text-[14px] leading-[42px] md:leading-[21px]">
-              THE LATE
+              THE LATEs
             </h3>
             <h2 className="font-normal text-primary-10 text-[40px] md:text-[17px] leading-[60px] md:leading-[25.5px]">
               VENERABLE PROFESSOR
