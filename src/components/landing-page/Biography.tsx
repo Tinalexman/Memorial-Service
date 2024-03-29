@@ -5,6 +5,7 @@ import Image from "next/image";
 import { BsArrowUpRight } from "react-icons/bs";
 import Gear from "@/public/landing-page/Gear.svg";
 import DonateButton from "../resuable/DonateButton";
+import ReadMoreContainer from "../resuable/ReadMoreContainer";
 
 const Biography = () => {
   return (
@@ -25,10 +26,8 @@ const Biography = () => {
             cons piscing elit lorem ipsumsit.
           </span>
         </h2>
-        <div className="w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 absolute -bottom-10 md:static right-[10%] md:my-20">
-          <p>Read more</p>
-          <BsArrowUpRight size={"16px"} />
-        </div>
+        <ReadMoreContainer useFixed={false} style="black" text="Read more" custom="absolute -bottom-10 md:static right-[10%] md:my-20" />
+        
         <DonateButton
           style="solid yellow"
           useShadow={true}

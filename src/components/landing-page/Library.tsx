@@ -1,6 +1,7 @@
 import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import DonateButton from "../resuable/DonateButton";
+import ReadMoreContainer from "../resuable/ReadMoreContainer";
 
 interface iBook {
   title: string;
@@ -62,11 +63,7 @@ const Library = () => {
       </div>
 
       <div className="md:flex hidden flex-col gap-[60px] w-full items-center">
-        <div className="w-[150px] h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[16px] leading-[20.5px] flex justify-center items-center gap-1">
-          <p>Read more</p>
-          <BsArrowUpRight size={"16px"} />
-        </div>
-
+        <ReadMoreContainer useFixed={true} style="black" text="Read more" />
         <DonateButton style="solid yellow" useShadow={true} />
       </div>
     </div>
