@@ -6,6 +6,7 @@ import { FaBarsStaggered } from "react-icons/fa6";
 
 import { useDisclosure } from "@mantine/hooks";
 import MobileDrawer from "../landing-page/MobileDrawer";
+import DonateButton from "./DonateButton";
 
 export interface iNavItem {
   name: string;
@@ -59,12 +60,8 @@ const Navbar = () => {
             );
           })}
         </div>
-        <button className="text-primary-10 font-normal text-[20px] leading-[30px] border-2 border-primary-border-60 px-3 py-1 rounded-full flex items-center gap-[10px] md:hidden">
-          <div className="w-[20px] h-[20px] bg-donate-green-40 rounded-full flex items-center justify-center">
-            <div className="w-[10px] h-[10px] bg-donate-green rounded-full" />
-          </div>
-          DONATE
-        </button>
+        <DonateButton style="outlined" useShadow={false} custom="md:hidden" />
+
         <FaBarsStaggered
           size={"24px"}
           onClick={openDrawer}
@@ -75,7 +72,6 @@ const Navbar = () => {
         closeDrawer={closeDrawer}
         menus={navs}
         openedDrawer={openedDrawer}
-        
       />
     </>
   );

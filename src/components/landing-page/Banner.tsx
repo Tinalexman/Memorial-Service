@@ -11,10 +11,11 @@ import Navbar from "@/src/components/resuable/Navbar";
 import { FiArrowDown } from "react-icons/fi";
 
 import { motion } from "framer-motion";
+import DonateButton from "../resuable/DonateButton";
 
 const Banner = () => {
   return (
-    <div className="w-[100vw] h-fit relative bg-black">
+    <div className="w-[100vw] h-auto relative bg-black">
       <Image
         src={Background}
         alt="background"
@@ -48,18 +49,25 @@ const Banner = () => {
             Scroll to Navigate
           </h3>
           <div className="w-[35px] h-[35px] bg-primary-border-40 rounded-full flex justify-center items-center">
-            <motion.div animate={{
-              y: ["0%", "30%", "0%"],
-              transition: {
-                ease: "easeInOut",
-                duration: 2,
-                repeat: Infinity,
-              }
-            }}>
+            <motion.div
+              animate={{
+                y: ["0%", "30%", "0%"],
+                transition: {
+                  ease: "easeInOut",
+                  duration: 2,
+                  repeat: Infinity,
+                },
+              }}
+            >
               <FiArrowDown size={"16px"} className="text-primary-10" />
             </motion.div>
           </div>
         </div>
+        <DonateButton
+          style="solid pale"
+          useShadow={false}
+          custom="hidden mt-10 mb-5"
+        />
       </div>
     </div>
   );

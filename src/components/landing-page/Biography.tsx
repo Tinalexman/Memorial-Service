@@ -4,12 +4,13 @@ import Image from "next/image";
 
 import { BsArrowUpRight } from "react-icons/bs";
 import Gear from "@/public/landing-page/Gear.svg";
+import DonateButton from "../resuable/DonateButton";
 
 const Biography = () => {
   return (
     <div
       id="biography-div"
-      className="w-[100vw] h-[100vh] md:h-auto flex flex-col px-[200px] md:px-[5%] py-24 md:pt-20 md:pb-0 bg-white relative"
+      className="w-[100vw] min-h-[800px] h-auto flex flex-col px-[200px] md:px-[5%] py-24 md:pt-20 md:pb-0 bg-white relative"
     >
       <h3 className="text-tertiary-20 font-[700] text-[20px] md:text-[16px] leading-[30px] md:leading-[24px] md:text-center">
         BIOGRAPHY
@@ -28,12 +29,11 @@ const Biography = () => {
           <p>Read more</p>
           <BsArrowUpRight size={"16px"} />
         </div>
-        <button className="text-white bg-primary-base font-normal text-[20px] leading-[30px] w-[180px] py-3 rounded-full justify-center items-center gap-[10px] md:flex hidden md:z-10 md:mb-10">
-          <div className="w-[20px] h-[20px] bg-primary-border-40 rounded-full flex items-center justify-center">
-            <div className="w-[10px] h-[10px] bg-primary-10 rounded-full" />
-          </div>
-          <p>DONATE</p>
-        </button>
+        <DonateButton
+          style="solid yellow"
+          useShadow={true}
+          custom="hidden md:z-10 md:mb-10"
+        />
       </div>
       <Image
         src={Gear}

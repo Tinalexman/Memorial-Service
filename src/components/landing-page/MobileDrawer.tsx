@@ -2,14 +2,13 @@
 
 import React, { FC } from "react";
 
-import Link from "next/link";
-
 import Logo from "@/src/components/resuable/Logo";
 
 import { Drawer } from "@mantine/core";
 
 import { IoMdClose } from "react-icons/io";
 import { iNavItem } from "../resuable/Navbar";
+import DonateButton from "../resuable/DonateButton";
 
 export interface iMobileDrawerProps {
   openedDrawer: boolean;
@@ -74,12 +73,11 @@ const MobileDrawer: FC<iMobileDrawerProps> = ({
                   </div>
                 </div>
 
-                <button className="text-tertiary-80 bg-primary-10 font-normal text-[20px] leading-[30px] w-[180px] py-3 rounded-full flex justify-center items-center gap-[10px]">
-                  <div className="w-[20px] h-[20px] bg-donate-green-40 rounded-full flex items-center justify-center">
-                    <div className="w-[10px] h-[10px] bg-donate-green rounded-full" />
-                  </div>
-                  <p>DONATE</p>
-                </button>
+                <DonateButton
+                  style="solid pale"
+                  useShadow={false}
+                  custom="hidden mt-10 mb-5"
+                />
               </div>
             </Drawer.Body>
           </Drawer.Content>

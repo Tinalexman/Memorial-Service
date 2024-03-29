@@ -49,7 +49,7 @@ const config: Config = {
         "primary-border-40": "rgba(246, 235, 215, 0.4)",
         "primary-border-60": "rgba(246, 235, 215, 0.6)",
         "donate-green": "#078905",
-        "donate-green-40": "rgba(7, 137, 5, 0.4)"
+        "donate-green-40": "rgba(7, 137, 5, 0.4)",
       },
       screens: {
         sm: {
@@ -60,8 +60,32 @@ const config: Config = {
           max: "768px",
         },
       },
+      animation: {
+        marquee: "marquee 8s linear infinite",
+      },
+      boxShadow: {
+        custom: "0 0 32px rgba(0, 0, 0, 0.24)",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities } : any) {
+      const newUtilities = {
+        '.text-outline-2': {
+          '-webkit-text-stroke': '2px white',
+        },
+        '.text-outline-4': {
+          '-webkit-text-stroke': '4px black',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };
 export default config;

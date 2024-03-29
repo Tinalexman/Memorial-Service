@@ -1,5 +1,6 @@
 import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
+import DonateButton from "../resuable/DonateButton";
 
 interface iBook {
   title: string;
@@ -43,7 +44,7 @@ const Library = () => {
               key={i}
               className="h-[120px] md:h-auto w-full flex md:flex-col md:items-start items-center justify-between border-b md:border-none border-tertiary-10"
             >
-              <div className="h-[310px] bg-tertiary-15 hidden md:block w-full mb-7" />
+              <div className="h-[310px] bg-tertiary-15 rounded hidden md:block w-full mb-7" />
               <h2 className="text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] text-tertiary-100 font-semibold w-[33%] md:w-full">
                 {book.title}
               </h2>
@@ -58,6 +59,15 @@ const Library = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="md:flex hidden flex-col gap-[60px] w-full items-center">
+        <div className="w-[150px] h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[16px] leading-[20.5px] flex justify-center items-center gap-1">
+          <p>Read more</p>
+          <BsArrowUpRight size={"16px"} />
+        </div>
+
+        <DonateButton style="solid yellow" useShadow={true} />
       </div>
     </div>
   );
