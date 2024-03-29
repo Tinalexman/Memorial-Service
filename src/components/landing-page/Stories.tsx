@@ -3,7 +3,7 @@ import { ImArrowUpRight2 } from "react-icons/im";
 
 const Stories = () => {
   return (
-    <div id='story-div' className='w-[100vw] h-[120vh] md:h-auto bg-tertiary-100 py-28 px-[200px] md:px-[5%] flex flex-col items-center'>
+    <div id='story-div' className='w-[100vw] h-auto bg-tertiary-100 py-28 px-[200px] md:px-[5%] flex flex-col items-center'>
       <h1 className='text-[100px] md:text-[60px] leading-[100px] text-primary-10 font-extrabold'>STORIES</h1>
 
       <div className='flex md:flex-col w-full gap-[34px] mt-12 items-center'>
