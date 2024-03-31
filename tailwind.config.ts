@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const plugin = require('tailwindcss/plugin');
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -65,9 +67,6 @@ const config: Config = {
         marquee2: "marquee 10s linear infinite",
         marquee3: "marquee 10s linear infinite",
       },
-      animationDelay: {
-        '2': '2000ms',
-      },
       boxShadow: {
         custom: "0 0 32px rgba(0, 0, 0, 0.24)",
       },
@@ -88,7 +87,16 @@ const config: Config = {
     },
   },
   plugins: [
-    require('tailwindcss-animation-delay'),
+    plugin(function ({ matchUtilities, theme } : any) {
+      matchUtilities(
+        {
+          'animate-delay': (value : any) => ({
+            animationDelay: value,
+          }),
+        },
+        { values: theme('transitionDelay') }
+      )
+    }),
   ],
 };
 export default config;

@@ -7,6 +7,8 @@ import { BsArrowUpRight } from "react-icons/bs";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import DoveMarquee from "../resuable/DoveMarquee";
 
+import { motion } from "framer-motion";
+
 const Gallery = () => {
   const row1: string[] = Array(4).fill("");
   const row2: string[] = Array(4).fill("");
@@ -40,49 +42,130 @@ const Gallery = () => {
           </div>
         </div>
       </div>
-      <div className="relative flex overflow-x-hidden text-white text-4xl w-full bg-secondary-base">
-        <div className="flex gap-5 animate-marquee2 whitespace-nowrap w-full">
-          {
-            Array(4).fill(0).map((val, i) => {
-              return (
-                <div key={i} className="w-[25%]">
-                  Item {i + 1}
-                </div>
-              );
-            })
-          }
-        </div>
-
-        <div className="absolute gap-5 top-0 flex animate-marquee3 delay-2 whitespace-nowrap w-full">
-        {
-            Array(4).fill(0).map((val, i) => {
-              return (
-                <div key={i} className="w-[25%]">
-                  Item {i + 5}
-                </div>
-              );
-            })
-          }
-        </div>
-      </div>
-
-      <div className="mt-20 flex flex-col gap-8 md:hidden w-full">
-        <div className="flex items-center gap-8 w-full">
+      <div className="relative flex overflow-x-hidden w-full mt-20 md:hidden">
+        <motion.div
+          initial={{
+            x: "100%",
+          }}
+          animate={{
+            x: "-100%",
+            transition: {
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          className="flex gap-8 whitespace-nowrap w-full"
+        >
           {row1.map((val, i) => {
             return <ImageContainer image={val} key={i} />;
           })}
-        </div>
-        <div className="flex items-center gap-8 w-full">
+        </motion.div>
+
+        <motion.div
+          initial={{
+            x: "100%",
+          }}
+          animate={{
+            x: "-100%",
+            transition: {
+              delay: 15,
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          className="absolute gap-8 flex whitespace-nowrap w-full"
+        >
+          {row1.map((val, i) => {
+            return <ImageContainer image={val} key={i} />;
+          })}
+        </motion.div>
+      </div>
+
+      <div className="relative flex overflow-x-hidden w-full mt-8 md:hidden">
+        <motion.div
+          initial={{
+            x: "100%",
+          }}
+          animate={{
+            x: "-100%",
+            transition: {
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          className="flex gap-8 whitespace-nowrap w-full"
+        >
           {row2.map((val, i) => {
             return <ImageContainer image={val} key={i} />;
           })}
-        </div>
-        <div className="flex items-center gap-8 w-full">
+        </motion.div>
+
+        <motion.div
+          initial={{
+            x: "100%",
+          }}
+          animate={{
+            x: "-100%",
+            transition: {
+              delay: 15,
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          className="absolute gap-8 flex whitespace-nowrap w-full"
+        >
+          {row2.map((val, i) => {
+            return <ImageContainer image={val} key={i} />;
+          })}
+        </motion.div>
+      </div>
+
+      <div className="relative flex overflow-x-hidden w-full mt-8 md:hidden">
+        <motion.div
+          initial={{
+            x: "100%",
+          }}
+          animate={{
+            x: "-100%",
+            transition: {
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          className="flex gap-8 whitespace-nowrap w-full"
+        >
           {row3.map((val, i) => {
             return <ImageContainer image={val} key={i} />;
           })}
-        </div>
+        </motion.div>
+
+        <motion.div
+          initial={{
+            x: "100%",
+          }}
+          animate={{
+            x: "-100%",
+            transition: {
+              delay: 15,
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          className="absolute gap-8 flex whitespace-nowrap w-full"
+        >
+          {row3.map((val, i) => {
+            return <ImageContainer image={val} key={i} />;
+          })}
+        </motion.div>
       </div>
+      
+      
       <div className="hidden md:flex flex-col items-center mt-0 gap-[60px] px-[5%]">
         <ImageContainer image={mobileImages[mobileIndex]} />
         <div className="w-[134px] h-[60px] flex items-center justify-between">
@@ -118,7 +201,7 @@ const ImageContainer: FC<iImageProp> = ({ image }) => {
       onMouseLeave={() => {
         setShow(false);
       }}
-      className="w-[25%] md:w-full h-[320px] bg-tertiary-15 rounded-[12px] cursor-pointer flex justify-center items-center"
+      className="w-[23%] md:w-full h-[320px] bg-tertiary-15 rounded-[12px] cursor-pointer flex justify-center items-center"
     >
       <div
         className={`w-full h-full flex items-center justify-center transition-opacity duration-500  ease-in-out ${
