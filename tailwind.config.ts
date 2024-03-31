@@ -62,6 +62,11 @@ const config: Config = {
       },
       animation: {
         marquee: "marquee 8s linear infinite",
+        marquee2: "marquee 10s linear infinite",
+        marquee3: "marquee 10s linear infinite",
+      },
+      animationDelay: {
+        '2': '2000ms',
       },
       boxShadow: {
         custom: "0 0 32px rgba(0, 0, 0, 0.24)",
@@ -71,21 +76,19 @@ const config: Config = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        marquee2: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee3: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
       },
     },
   },
   plugins: [
-    function ({ addUtilities } : any) {
-      const newUtilities = {
-        '.text-outline-2': {
-          '-webkit-text-stroke': '2px white',
-        },
-        '.text-outline-4': {
-          '-webkit-text-stroke': '4px black',
-        },
-      };
-      addUtilities(newUtilities);
-    },
+    require('tailwindcss-animation-delay'),
   ],
 };
 export default config;

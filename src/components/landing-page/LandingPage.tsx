@@ -13,7 +13,7 @@ const LandingPage = async () => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <>
+      <div className="overflow-x-hidden">
         <Banner />
         <Biography />
         <Announcement />
@@ -21,7 +21,7 @@ const LandingPage = async () => {
         <Library />
         <Gallery />
         <Footer />
-      </>
+      </div>
     </Suspense>
   );
 };
