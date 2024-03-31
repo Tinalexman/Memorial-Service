@@ -11,7 +11,7 @@ const DoveMarquee = () => {
 
   return (
     <>
-      <div className="relative flex overflow-x-hidden w-full mt-8 md:hidden">
+      <div className="relative flex overflow-x-hidden w-full mt-8">
         <motion.div
           initial={{
             x: "100%",
@@ -24,7 +24,7 @@ const DoveMarquee = () => {
               ease: "linear",
             },
           }}
-          className="flex justify-around w-full"
+          className="flex justify-around md:justify-start md:gap-12 w-full"
         >
           {Array(2)
             .fill(0)
@@ -37,7 +37,7 @@ const DoveMarquee = () => {
             })}
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{
             x: "100%",
           }}
@@ -50,7 +50,7 @@ const DoveMarquee = () => {
               ease: "linear",
             },
           }}
-          className="absolute justify-around flex w-full"
+          className="absolute justify-around md:justify-start md:gap-12 flex w-full"
         >
           {Array(2)
             .fill(0)
@@ -61,7 +61,7 @@ const DoveMarquee = () => {
                 </div>
               );
             })}
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );
@@ -69,9 +69,9 @@ const DoveMarquee = () => {
 
 const TextDove = () => {
   return (
-    <div className="flex items-center justify-between w-[640px]">
+    <div className="flex items-center justify-between w-[640px] md:w-[300px]">
       <Image src={RIP} alt="rip" className="h-[60px] w-auto" />
-      <p className="text-[60px] leading-[80px] font-extrabold text-outline-2 ">
+      <p className="text-[60px] md:text-[40px] leading-[80px] md:leading-[60px] font-extrabold text-outline-2 ">
         🕊️
       </p>
     </div>
