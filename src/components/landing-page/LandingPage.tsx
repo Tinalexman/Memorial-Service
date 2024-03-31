@@ -9,20 +9,18 @@ import Gallery from "./Gallery";
 import Footer from "../resuable/Footer";
 
 const LandingPage = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  //await new Promise((resolve) => setTimeout(resolve, 5000));
 
   return (
-    <Suspense fallback={<Loader />}>
-      <div className="overflow-x-hidden">
-        <Banner />
-        <Biography />
-        <Announcement />
-        <Stories />
-        <Library />
-        <Gallery />
-        <Footer />
-      </div>
-    </Suspense>
+    <div className="overflow-x-hidden">
+      <Banner />
+      <Biography />
+      <Announcement />
+      <Stories />
+      <Library />
+      <Gallery />
+      <Footer />
+    </div>
   );
 };
 

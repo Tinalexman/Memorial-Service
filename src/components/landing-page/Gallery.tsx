@@ -1,6 +1,6 @@
 "use client";
 
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { FC, useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 
@@ -9,12 +9,87 @@ import DoveMarquee from "../resuable/DoveMarquee";
 
 import { motion } from "framer-motion";
 
-const Gallery = () => {
-  const row1: string[] = Array(4).fill("");
-  const row2: string[] = Array(4).fill("");
-  const row3: string[] = Array(4).fill("");
+import R11 from "@/public/landing-page/R11.png";
+import R12 from "@/public/landing-page/R12.png";
+import R13 from "@/public/landing-page/R13.png";
 
-  const mobileImages: string[] = Array(20).fill("");
+import R21 from "@/public/landing-page/R21.png";
+import R22 from "@/public/landing-page/R22.png";
+
+import R31 from "@/public/landing-page/R31.png";
+import R32 from "@/public/landing-page/R32.png";
+import R33 from "@/public/landing-page/R33.png";
+
+const Gallery = () => {
+  const row1: iImageProp[] = [
+    {
+      image: R11,
+    },
+    {
+      image: R12,
+    },
+    {
+      image: R13,
+    },
+    {
+      image: R12,
+    },
+  ];
+  const row2: iImageProp[] = [
+    {
+      image: R21,
+    },
+    {
+      image: R12,
+    },
+    {
+      image: R22,
+    },
+    {
+      image: R11,
+    },
+  ];
+  const row3: iImageProp[] = [
+    {
+      image: R31,
+    },
+    {
+      image: R32,
+    },
+    {
+      image: R33,
+    },
+    {
+      image: R32,
+    },
+  ];
+
+  const mobileImages: iImageProp[] = [
+    {
+      image: R11,
+    },
+    {
+      image: R12,
+    },
+    {
+      image: R13,
+    },
+    {
+      image: R21,
+    },
+    {
+      image: R22,
+    },
+    {
+      image: R31,
+    },
+    {
+      image: R32,
+    },
+    {
+      image: R33,
+    },
+  ];
   const [mobileIndex, setMobileIndex] = useState<number>(0);
 
   return (
@@ -58,7 +133,7 @@ const Gallery = () => {
           className="flex gap-8 whitespace-nowrap w-full"
         >
           {row1.map((val, i) => {
-            return <ImageContainer image={val} key={i} />;
+            return <ImageContainer image={val.image} key={i} />;
           })}
         </motion.div>
 
@@ -78,7 +153,7 @@ const Gallery = () => {
           className="absolute gap-8 flex whitespace-nowrap w-full"
         >
           {row1.map((val, i) => {
-            return <ImageContainer image={val} key={i} />;
+            return <ImageContainer image={val.image} key={i} />;
           })}
         </motion.div>
       </div>
@@ -91,7 +166,7 @@ const Gallery = () => {
           animate={{
             x: "-100%",
             transition: {
-              duration: 30,
+              duration: 26,
               repeat: Infinity,
               ease: "linear",
             },
@@ -99,7 +174,7 @@ const Gallery = () => {
           className="flex gap-8 whitespace-nowrap w-full"
         >
           {row2.map((val, i) => {
-            return <ImageContainer image={val} key={i} />;
+            return <ImageContainer image={val.image} key={i} />;
           })}
         </motion.div>
 
@@ -110,8 +185,8 @@ const Gallery = () => {
           animate={{
             x: "-100%",
             transition: {
-              delay: 15,
-              duration: 30,
+              delay: 13,
+              duration: 26,
               repeat: Infinity,
               ease: "linear",
             },
@@ -119,7 +194,7 @@ const Gallery = () => {
           className="absolute gap-8 flex whitespace-nowrap w-full"
         >
           {row2.map((val, i) => {
-            return <ImageContainer image={val} key={i} />;
+            return <ImageContainer image={val.image} key={i} />;
           })}
         </motion.div>
       </div>
@@ -132,7 +207,7 @@ const Gallery = () => {
           animate={{
             x: "-100%",
             transition: {
-              duration: 30,
+              duration: 28,
               repeat: Infinity,
               ease: "linear",
             },
@@ -140,7 +215,7 @@ const Gallery = () => {
           className="flex gap-8 whitespace-nowrap w-full"
         >
           {row3.map((val, i) => {
-            return <ImageContainer image={val} key={i} />;
+            return <ImageContainer image={val.image} key={i} />;
           })}
         </motion.div>
 
@@ -151,8 +226,8 @@ const Gallery = () => {
           animate={{
             x: "-100%",
             transition: {
-              delay: 15,
-              duration: 30,
+              delay: 14,
+              duration: 28,
               repeat: Infinity,
               ease: "linear",
             },
@@ -160,28 +235,38 @@ const Gallery = () => {
           className="absolute gap-8 flex whitespace-nowrap w-full"
         >
           {row3.map((val, i) => {
-            return <ImageContainer image={val} key={i} />;
+            return <ImageContainer image={val.image} key={i} />;
           })}
         </motion.div>
       </div>
-      
-      
+
       <div className="hidden md:flex flex-col items-center mt-0 gap-[60px] px-[5%]">
-        <ImageContainer image={mobileImages[mobileIndex]} />
+        <ImageContainer image={mobileImages[mobileIndex].image} />
         <div className="w-[134px] h-[60px] flex items-center justify-between">
           <div className="w-[60px] h-[60px]  text-primary-10 border border-primary-10 rounded-full flex items-center justify-center">
-            <GoArrowLeft size={"18px"} />
+            <GoArrowLeft
+              size={"18px"}
+              onClick={() => {
+                setMobileIndex(
+                  mobileIndex === 0 ? mobileImages.length - 1 : mobileIndex - 1
+                );
+              }}
+            />
           </div>
           <div className="w-[60px] h-[60px] text-tertiary-100 bg-primary-10 rounded-full flex items-center justify-center">
-            <GoArrowRight size={"18px"} />
+            <GoArrowRight size={"18px"} onClick={() => {
+              setMobileIndex(
+                mobileIndex === mobileImages.length - 1 ? 0 : mobileIndex + 1
+              );
+            }}/>
           </div>
         </div>
       </div>
-      {/* <div className="mt-20 w-full flex flex-col">
+      <div className="mt-20 mb-10 w-full flex flex-col">
         <DoveMarquee />
         <DoveMarquee />
         <DoveMarquee />
-      </div> */}
+      </div>
     </div>
   );
 };
@@ -201,14 +286,23 @@ const ImageContainer: FC<iImageProp> = ({ image }) => {
       onMouseLeave={() => {
         setShow(false);
       }}
-      className="w-[23%] md:w-full h-[320px] bg-tertiary-15 rounded-[12px] cursor-pointer flex justify-center items-center"
+      className="w-[23%] md:w-full h-[320px] rounded-[12px] cursor-pointer flex justify-center items-center relative"
     >
+      <Image
+        src={image}
+        alt="image"
+        className="w-[100%] h-[320px] object-cover rounded-[12px]"
+      />
       <div
-        className={`w-full h-full flex items-center justify-center transition-opacity duration-500  ease-in-out ${
-          show ? "opacity-100" : "opacity-0"
+        className={`w-full h-full flex items-center absolute justify-center transition-opacity duration-500  ease-in-out ${
+          show ? "opacity-100 bg-[#00000030]" : "opacity-0 bg-[#FFFFFF00]"
         }`}
       >
-        <div className=" w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-primary-base text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1">
+        <div
+          className={`w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-primary-base text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 transition-opacity duration-500  ease-in-out ${
+            show ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <p>View</p>
           <BsArrowUpRight size={"16px"} />
         </div>

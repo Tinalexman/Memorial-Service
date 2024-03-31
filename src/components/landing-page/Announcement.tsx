@@ -7,7 +7,6 @@ import Arrow from "@/public/landing-page/Long Arrow.svg";
 import DoveMarquee from "../resuable/DoveMarquee";
 import ReadMoreContainer from "../resuable/ReadMoreContainer";
 
-
 const Announcement = () => {
   return (
     <div className="w-[100vw] h-auto bg-tertiary-100 flex flex-col py-24 md:py-[20px] ">
@@ -31,7 +30,7 @@ const Announcement = () => {
       </div>
 
       <div className="flex md:flex-col-reverse md:gap-12 w-full justify-between items-center mt-[72px] pl-[200px] md:pl-[5%] md:pr-[5%]">
-      <ReadMoreContainer useFixed={false} style="yellow" text="Read more" />
+        <ReadMoreContainer useFixed={false} style="yellow" text="Read more" />
         <div className="h-[210px] md:h-[140px] border border-[#862D37] border-x-0 w-[55%] md:w-full flex gap-[72px] md:gap-9 justify-start items-center">
           <h2 className="text-white text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
             Age
@@ -47,9 +46,9 @@ const Announcement = () => {
         </div>
       </div>
 
-      {/* <div className="mt-20 w-full">
+      <div className="mt-20 w-full">
         <DoveMarquee />
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -2,6 +2,9 @@ import React from "react";
 import { ImArrowUpRight2 } from "react-icons/im";
 import DonateButton from "../resuable/DonateButton";
 
+import Image from "next/image";
+import R11 from "@/public/landing-page/R13.png";
+
 const Stories = () => {
   return (
     <div
@@ -13,8 +16,9 @@ const Stories = () => {
       </h1>
 
       <div className="flex md:flex-col w-full gap-[34px] mt-12 items-center">
-        <div className="w-[50%] md:w-full h-[250px] bg-tertiary-15 rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] flex items-center justify-center">
-          <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2">
+        <div className="w-[50%] md:w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] flex items-center justify-center relative">
+          <Image src={R11} alt="image" className="w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] object-cover"/>
+          <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2 absolute">
             <h3 className="text-[#A27E82] font-extrabold text-[10px] leading-[15px]">
               CHURCH
             </h3>
