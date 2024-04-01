@@ -7,7 +7,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const DoveMarquee = () => {
-  const number = (Math.random() * 4) + 10;
+  const number = (Math.random() * 4) + 8;
 
   return (
     <>

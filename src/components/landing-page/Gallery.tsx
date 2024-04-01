@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import React, { FC, useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
-
+import { IoMdClose } from "react-icons/io";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import DoveMarquee from "../resuable/DoveMarquee";
 
@@ -19,6 +19,9 @@ import R22 from "@/public/landing-page/R22.png";
 import R31 from "@/public/landing-page/R31.png";
 import R32 from "@/public/landing-page/R32.png";
 import R33 from "@/public/landing-page/R33.png";
+
+import { useDisclosure } from "@mantine/hooks";
+import { Modal } from "@mantine/core";
 
 const Gallery = () => {
   const row1: iImageProp[] = [
@@ -254,11 +257,14 @@ const Gallery = () => {
             />
           </div>
           <div className="w-[60px] h-[60px] text-tertiary-100 bg-primary-10 rounded-full flex items-center justify-center">
-            <GoArrowRight size={"18px"} onClick={() => {
-              setMobileIndex(
-                mobileIndex === mobileImages.length - 1 ? 0 : mobileIndex + 1
-              );
-            }}/>
+            <GoArrowRight
+              size={"18px"}
+              onClick={() => {
+                setMobileIndex(
+                  mobileIndex === mobileImages.length - 1 ? 0 : mobileIndex + 1
+                );
+              }}
+            />
           </div>
         </div>
       </div>
@@ -278,36 +284,60 @@ interface iImageProp {
 const ImageContainer: FC<iImageProp> = ({ image }) => {
   const [show, setShow] = useState<boolean>(false);
 
+  const [opened, { open, close }] = useDisclosure(false);
+
   return (
-    <div
-      onMouseEnter={() => {
-        setShow(true);
-      }}
-      onMouseLeave={() => {
-        setShow(false);
-      }}
-      className="w-[23%] md:w-full h-[320px] rounded-[12px] cursor-pointer flex justify-center items-center relative"
-    >
-      <Image
-        src={image}
-        alt="image"
-        className="w-[100%] h-[320px] object-cover rounded-[12px]"
-      />
+    <>
       <div
-        className={`w-full h-full flex items-center absolute justify-center transition-opacity duration-500  ease-in-out ${
-          show ? "opacity-100 bg-[#00000030]" : "opacity-0 bg-[#FFFFFF00]"
-        }`}
+        onMouseEnter={() => {
+          setShow(true);
+        }}
+        onMouseLeave={() => {
+          setShow(false);
+        }}
+        className="w-[23%] md:w-full h-[320px] rounded-[12px] cursor-pointer flex justify-center items-center relative"
       >
+        <Image
+          src={image}
+          alt="image"
+          className="w-[100%] h-[320px] object-cover rounded-[12px]"
+        />
         <div
-          className={`w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-primary-base text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 transition-opacity duration-500  ease-in-out ${
-            show ? "opacity-100" : "opacity-0"
+          className={`w-full h-full flex items-center absolute justify-center transition-opacity duration-500  ease-in-out ${
+            show ? "opacity-100 bg-[#00000030]" : "opacity-0 bg-[#FFFFFF00]"
           }`}
         >
-          <p>View</p>
-          <BsArrowUpRight size={"16px"} />
+          <div
+            onClick={open}
+            className={`w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-primary-base text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 transition-opacity duration-500  ease-in-out ${
+              show ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <p>View</p>
+            <BsArrowUpRight size={"16px"} />
+          </div>
         </div>
       </div>
-    </div>
+      <Modal.Root
+        padding={"0px"}
+        top={"0px"}
+        onClose={close}
+        opened={opened}
+        centered
+      >
+        <Modal.Overlay />
+        <Modal.Content>
+          <Modal.Body>
+            <div className="w-full relative">
+              <Image src={image} alt="image" className="w-full h-auto"/>
+              <div onClick={close} className="size-8 bg-primary-10 rounded-lg absolute top-2 right-2 flex justify-center items-center cursor-pointer">
+                <IoMdClose size={"26px"} className="text-primary-base"/>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal.Content>
+      </Modal.Root>
+    </>
   );
 };
 
