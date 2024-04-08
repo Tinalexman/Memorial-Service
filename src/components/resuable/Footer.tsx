@@ -6,6 +6,8 @@ import Man from "@/public/landing-page/Man.svg";
 import { ImArrowDownRight2 } from "react-icons/im";
 import ReadMoreContainer from "./ReadMoreContainer";
 
+import { motion } from "framer-motion";
+
 const Footer = () => {
   return (
     <div className="w-[100vw] h-auto bg-tertiary-100 flex flex-col py-[72px] px-[200px] md:px-[5%] overflow-clip">
@@ -36,10 +38,50 @@ const Footer = () => {
         <div className="w-[calc(100%-200px)] md:w-[calc(100%-150px)] h-[2px] bg-primary-base" />
         <div className="relative">
           <ReadMoreContainer useFixed={false} style="yellow" text="Donate" />
-          <div className="w-[320px] md:w-[220px] h-[320px] md:h-[220px] opacity-10 border border-primary-10 rounded-full absolute -top-[55px] md:-top-[35px] -left-[55px] md:-left-[35px]" />
-          <div className="w-[480px] md:w-[360px] h-[480px] md:h-[360px] opacity-10 border border-primary-10 rounded-full absolute -top-[135px] md:-top-[105px] -left-[135px] md:-left-[105px]" />
-          <div className="w-[640px] md:w-[500px] h-[640px] md:h-[500px] opacity-10 border border-primary-10 rounded-full absolute -top-[215px] md:-top-[175px] -left-[215px] md:-left-[175px]" />
-          <div className="w-[910px] md:w-[700px] h-[910px] md:h-[700px] opacity-10 border border-primary-10 rounded-full absolute -top-[350px] md:-top-[275px] -left-[350px] md:-left-[275px]" />
+          <motion.div
+            animate={{
+              scale: [1.0, 1.4, 1.0],
+              transition: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeOut",
+              },
+            }}
+            className="w-[320px] md:w-[220px] h-[320px] md:h-[220px] opacity-10 border border-primary-10 rounded-full absolute -top-[55px] md:-top-[35px] -left-[55px] md:-left-[35px]"
+          />
+          <motion.div
+            animate={{
+              scale: [1.0, 1.3, 1.0],
+              transition: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeOut",
+              },
+            }}
+            className="w-[480px] md:w-[360px] h-[480px] md:h-[360px] opacity-10 border border-primary-10 rounded-full absolute -top-[135px] md:-top-[105px] -left-[135px] md:-left-[105px]"
+          />
+          <motion.div
+            animate={{
+              scale: [1.0, 1.3, 1.0],
+              transition: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeOut",
+              },
+            }}
+            className="w-[640px] md:w-[500px] h-[640px] md:h-[500px] opacity-10 border border-primary-10 rounded-full absolute -top-[215px] md:-top-[175px] -left-[215px] md:-left-[175px]"
+          />
+          <motion.div
+            animate={{
+              scale: [1.0, 1.4, 1.0],
+              transition: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeOut",
+              },
+            }}
+            className="w-[910px] md:w-[700px] h-[910px] md:h-[700px] opacity-10 border border-primary-10 rounded-full absolute -top-[350px] md:-top-[275px] -left-[350px] md:-left-[275px]"
+          />
         </div>
       </div>
       <p className="text-[20px] leading-[30px] text-primary-10 font-normal opacity-65 md:text-center">

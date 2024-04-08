@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 import Image from "next/image";
@@ -21,10 +19,50 @@ const Banner = () => {
         alt="background"
         className="w-[100vw] h-full md:h-[100vh] object-cover"
       />
-      <div className="w-[65%] md:w-[90vh] h-[calc(65vw)] md:h-[90vh] opacity-10 border border-primary-10 rounded-full absolute top-0 md:top-[10vh] left-[17.5%] md:-left-[20vh]" />
-      <div className="w-[45%] md:w-[70vh] h-[calc(45vw)] md:h-[70vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(10vw)] md:top-[20vh] left-[27.5%] md:-left-[10vh]" />
-      <div className="w-[25%] md:w-[50vh] h-[calc(25vw)] md:h-[50vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(20vw)] md:top-[30vh] left-[37.5%] md:left-[0vh]" />
-      <div className="w-[5%] md:w-[30vh] h-[calc(5vw)] md:h-[30vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(30vw)] md:top-[40vh] left-[47.5%] md:left-[10vh]" />
+      <motion.div
+        animate={{
+          scale: [1.0, 1.4, 1.0],
+          transition: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeOut",
+          },
+        }}
+        className="w-[65%] md:w-[90vh] h-[calc(65vw)] md:h-[90vh] opacity-10 border border-primary-10 rounded-full absolute top-0 md:top-[10vh] left-[17.5%] md:-left-[20vh]"
+      />
+      <motion.div
+        animate={{
+          scale: [1.0, 1.3, 1.0],
+          transition: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeOut",
+          },
+        }}
+        className="w-[45%] md:w-[70vh] h-[calc(45vw)] md:h-[70vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(10vw)] md:top-[20vh] left-[27.5%] md:-left-[10vh]"
+      />
+      <motion.div
+        animate={{
+          scale: [1.0, 1.2, 1.0],
+          transition: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeOut",
+          },
+        }}
+        className="w-[25%] md:w-[50vh] h-[calc(25vw)] md:h-[50vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(20vw)] md:top-[30vh] left-[37.5%] md:left-[0vh]"
+      />
+      <motion.div
+        animate={{
+          scale: [1.0, 1.5, 1.0],
+          transition: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeOut",
+          },
+        }}
+        className="w-[5%] md:w-[30vh] h-[calc(5vw)] md:h-[30vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(30vw)] md:top-[40vh] left-[47.5%] md:left-[10vh]"
+      />
       <div className="w-full h-full px-[100px] md:px-[5%] py-[32px] md:py-[20px] absolute z-10 top-0 left-0 flex flex-col items-center">
         <Navbar />
         <div className="w-full h-full flex flex-col justify-center items-center mt-24 md:mt-16  ">
