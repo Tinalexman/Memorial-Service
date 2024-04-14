@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import DonateButton from "../resuable/DonateButton";
 import ReadMoreContainer from "../resuable/ReadMoreContainer";
@@ -63,7 +63,12 @@ const Library = () => {
       </div>
 
       <div className="md:flex hidden flex-col gap-[60px] w-full items-center">
-        <ReadMoreContainer useFixed={true} style="black" text="Read more" />
+        <ReadMoreContainer
+          onClick={() => {}}
+          useFixed={true}
+          style="black"
+          text="Read more"
+        />
         <DonateButton style="solid yellow" useShadow={true} />
       </div>
     </div>

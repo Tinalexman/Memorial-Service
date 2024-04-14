@@ -13,11 +13,11 @@ import DonateButton from "../resuable/DonateButton";
 
 const Banner = () => {
   return (
-    <div className="w-[100vw] h-auto relative bg-black overflow-clip">
+    <div className="w-[100vw] h-[100vh] pb-20 relative bg-black overflow-clip">
       <Image
         src={Background}
         alt="background"
-        className="w-[100vw] h-full md:h-[100vh] object-cover"
+        className="w-[100vw] h-[100vh] object-cover"
       />
       <motion.div
         animate={{

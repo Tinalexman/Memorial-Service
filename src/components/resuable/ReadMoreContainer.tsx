@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 
 interface iReadMoreProps {
   style: "black" | "yellow";
-  text: "Read more" | "Donate";
+  text: "Read more" | "Read less" | "Donate";
   custom?: string;
   useFixed: boolean;
+  onClick: () => void;
 }
 
 const ReadMoreContainer: FC<iReadMoreProps> = ({
@@ -15,16 +16,18 @@ const ReadMoreContainer: FC<iReadMoreProps> = ({
   style,
   custom,
   useFixed,
+  onClick,
 }) => {
   return (
     <motion.div
+      onClick={onClick}
       whileInView={{
         scale: [1.0, 1.1, 1.0],
         transition: {
           duration: 5,
           repeat: Infinity,
           ease: "easeInOut",
-        }
+        },
       }}
       className={`${
         useFixed

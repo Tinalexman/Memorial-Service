@@ -37,7 +37,12 @@ const Footer = () => {
       <div className="mt-[200px] md:mt-[90px] md:mb-[20px] flex items-center w-full">
         <div className="w-[calc(100%-200px)] md:w-[calc(100%-150px)] h-[2px] bg-primary-base" />
         <div className="relative">
-          <ReadMoreContainer useFixed={false} style="yellow" text="Donate" />
+          <ReadMoreContainer
+            onClick={() => {}}
+            useFixed={false}
+            style="yellow"
+            text="Donate"
+          />
           <motion.div
             animate={{
               scale: [1.0, 1.4, 1.0],
