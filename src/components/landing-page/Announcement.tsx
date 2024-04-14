@@ -36,7 +36,7 @@ const Announcement = () => {
           text="Read more"
           onClick={() => {}}
         />
-        <div className="h-[210px] md:h-[140px] border border-[#862D37] border-x-0 w-[55%] md:w-full flex gap-[60  px] md:gap-9 justify-start items-center">
+        <div className="h-[210px] md:h-[140px] border border-[#862D37] border-x-0 w-[55%] md:w-full flex gap-[60px] md:gap-9 justify-start items-center">
           <h2 className="text-white text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
             Age
           </h2>

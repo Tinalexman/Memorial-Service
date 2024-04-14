@@ -120,18 +120,19 @@ const Biography = () => {
             </span>
           </h2>
           <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
-            Professor Fayomi&apos;s dedication to academia didn't stop there. He
-            joined the Department of Animal Science at Ahmadu Bello University
-            as a lecturer and researcher in September 1981, a role he held with
-            distinction for an impressive 43 years until his retirement in 2021.
-            His passion for teaching extended beyond the university walls, with
-            his final act being a visit to teach children at{" "}
+            Professor Fayomi&apos;s dedication to academia didn&apos;t stop
+            there. He joined the Department of Animal Science at Ahmadu Bello
+            University as a lecturer and researcher in September 1981, a role he
+            held with distinction for an impressive 43 years until his
+            retirement in 2021. His passion for teaching extended beyond the
+            university walls, with his final act being a visit to teach children
+            at{" "}
             <span className="text-tertiary-20">
               JESJEH International School Kudende Kaduna.
             </span>
           </h2>
           <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
-            Professor Fayomi&apos;s life wasn't solely defined by academic
+            Professor Fayomi&apos;s life wasn&apos;t solely defined by academic
             achievements. After finding faith in Christ, he became actively
             involved in evangelism during his university days. This dedication
             continued at his local parish, St. Christopher Kaduna. His faith
@@ -140,8 +141,8 @@ const Biography = () => {
             blossomed. He pursued a Diploma in Theology at Immanuel College
             Ibadan from 1988 to 1990. Professor Fayomi&apos;s service to the
             church extended beyond his local parish. He faithfully served in
-            numerous parishes and even launched a magazine tract called "Jesus
-            Monthly" to{" "}
+            numerous parishes and even launched a magazine tract called
+            &quot;Jesus Monthly&quot; to{" "}
             <span className="text-tertiary-20">spread the word of God.</span>
           </h2>
           <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
@@ -149,8 +150,8 @@ const Biography = () => {
             religion. He held a deep concern for the less fortunate, especially
             regarding education. Driven by his own experience of receiving help,
             he established the Adeleke Education Foundation to assist children
-            in need. His philosophy in life, "education brings liberty and
-            power," reflects his belief in education as a{" "}
+            in need. His philosophy in life, &quot;education brings liberty and
+            power&quot;, reflects his belief in education as a{" "}
             <span className="text-tertiary-20">tool for empowerment.</span>
           </h2>
           <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
@@ -167,9 +168,9 @@ const Biography = () => {
             community. He was a leader, a teacher, a mentor, and a man of God.
             His unwavering commitment to education, both within the classroom
             and his community, serves as an inspiration for generations to come.
-            Professor Fayomi&apos;s favourite words, "God bless my generation
-            now and always," capture the essence of a life dedicated to service
-            and the{" "}
+            Professor Fayomi&apos;s favourite words, &quot;God bless my
+            generation now and always&quot;, capture the essence of a life
+            dedicated to service and the{" "}
             <span className="text-tertiary-20">betterment of humanity.</span>
           </h2>
           <div className="h-40" />

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React from "react";
 import Banner from "./Banner";
 import Loader from "../resuable/Loader";
 import Biography from "./Biography";
