@@ -60,7 +60,7 @@ const Navbar = () => {
             );
           })}
         </div>
-        <DonateButton style="outlined" useShadow={false} custom="md:hidden" />
+        {/* <DonateButton style="outlined" useShadow={false} custom="md:hidden" /> */}
 
         <FaBarsStaggered
           size={"24px"}

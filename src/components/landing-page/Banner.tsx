@@ -28,7 +28,7 @@ const Banner = () => {
             ease: "easeOut",
           },
         }}
-        className="w-[65%] md:w-[90vh] h-[calc(65vw)] md:h-[90vh] opacity-10 border border-primary-10 rounded-full absolute top-0 md:top-[10vh] left-[17.5%] md:-left-[20vh]"
+        className="w-[65%] md:w-[90vh] h-[calc(65vw)] md:h-[90vh] opacity-10 border border-primary-10 rounded-full absolute top-0 md:top-[10vh] left-[17.5%] md:-left-[10vh]"
       />
       <motion.div
         animate={{
@@ -39,7 +39,7 @@ const Banner = () => {
             ease: "easeOut",
           },
         }}
-        className="w-[45%] md:w-[70vh] h-[calc(45vw)] md:h-[70vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(10vw)] md:top-[20vh] left-[27.5%] md:-left-[10vh]"
+        className="w-[45%] md:w-[70vh] h-[calc(45vw)] md:h-[70vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(10vw)] md:top-[20vh] left-[27.5%] md:-left-[0vh]"
       />
       <motion.div
         animate={{
@@ -50,7 +50,7 @@ const Banner = () => {
             ease: "easeOut",
           },
         }}
-        className="w-[25%] md:w-[50vh] h-[calc(25vw)] md:h-[50vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(20vw)] md:top-[30vh] left-[37.5%] md:left-[0vh]"
+        className="w-[25%] md:w-[50vh] h-[calc(25vw)] md:h-[50vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(20vw)] md:top-[30vh] left-[37.5%] md:left-[10vh]"
       />
       <motion.div
         animate={{
@@ -61,7 +61,7 @@ const Banner = () => {
             ease: "easeOut",
           },
         }}
-        className="w-[5%] md:w-[30vh] h-[calc(5vw)] md:h-[30vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(30vw)] md:top-[40vh] left-[47.5%] md:left-[10vh]"
+        className="w-[5%] md:w-[30vh] h-[calc(5vw)] md:h-[30vh] opacity-10 border border-primary-10 rounded-full absolute top-[calc(30vw)] md:top-[40vh] left-[47.5%] md:left-[20vh]"
       />
       <div className="w-full h-full px-[100px] md:px-[5%] py-[32px] md:py-[20px] absolute z-10 top-0 left-0 flex flex-col items-center">
         <Navbar />
@@ -69,28 +69,28 @@ const Banner = () => {
           <Image
             src={Picture}
             alt="picture frame"
-            className="w-[calc(18vh)] md:w-[116px] h-auto"
+            className="w-[calc(18vh)] md:w-[calc(15vh)] h-auto"
           />
           <div className="w-full flex flex-col items-center mt-[5vh] md:mt-8">
-            <h3 className="font-light text-primary-10 text-[calc(3.5vh)] md:text-[14px] leading-[calc(4vh)] md:leading-[21px]">
+            <h3 className="font-light text-primary-10 text-[calc(3.5vh)] md:text-[calc(2vh)] leading-[calc(4vh)] md:leading-[calc(3vh)]">
               THE LATE
             </h3>
-            <h2 className="font-normal text-primary-10 text-[calc(5vh)] md:text-[17px] leading-[calc(6vh)] md:leading-[25.5px]">
+            <h2 className="font-normal text-primary-10 text-[calc(5vh)] md:text-[17px] leading-[calc(6vh)] md:leading-[calc(5vh)]">
               VENERABLE PROFESSOR
             </h2>
-            <h1 className="text-primary-base font-extrabold text-[calc(10vh)] md:text-[37px] leading-[calc(10vh)] md:leading-[37px]">
+            <h1 className="text-primary-base font-extrabold text-[calc(10vh)] md:text-[calc(6vh)] leading-[calc(10vh)] md:leading-[calc(7vh)]">
               JACOB ADELEKE
             </h1>
-            <h1 className="text-primary-10 font-extrabold text-[calc(23vh)] md:text-[87px] leading-[calc(23vh)] md:leading-[87px]">
+            <h1 className="text-primary-10 font-extrabold text-[calc(23vh)] md:text-[calc(13.5vh)] leading-[calc(23vh)] md:leading-[calc(15vh)]">
               FAYOMI
             </h1>
           </div>
         </div>
-        <div className="mt-[2vh] flex flex-col items-center gap-1 w-fit">
-          <h3 className="font-light text-primary-10 text-[18px] md:text-[16px] leading-[26px]">
+        <div className="mt-[2vh] md:mt-[6vh] flex flex-col items-center gap-1 w-fit">
+          <h3 className="font-light text-primary-10 text-[18px] md:text-[14px] leading-[26px]">
             Scroll to Navigate
           </h3>
-          <div className="w-[30px] h-[30px] bg-primary-border-40 rounded-full flex justify-center items-center">
+          <div className="size-[30px] md:size-[26px] bg-primary-border-40 rounded-full flex justify-center items-center">
             <motion.div
               animate={{
                 y: ["0%", "30%", "0%"],
@@ -105,11 +105,6 @@ const Banner = () => {
             </motion.div>
           </div>
         </div>
-        <DonateButton
-          style="solid pale"
-          useShadow={false}
-          custom="hidden mt-10 mb-5"
-        />
       </div>
     </div>
   );

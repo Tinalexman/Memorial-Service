@@ -17,7 +17,11 @@ const Stories = () => {
 
       <div className="flex md:flex-col w-full gap-[34px] mt-12 items-center">
         <div className="w-[50%] md:w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] flex items-center justify-center relative">
-          <Image src={R11} alt="image" className="w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] object-cover"/>
+          <Image
+            src={R11}
+            alt="image"
+            className="w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] object-cover"
+          />
           <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2 absolute">
             <h3 className="text-[#A27E82] font-extrabold text-[10px] leading-[15px]">
               CHURCH
@@ -34,12 +38,6 @@ const Stories = () => {
         <div className="w-[50%] md:w-full h-[250px] bg-tertiary-15 rounded-tr-[12px] rounded-bl-[12px] rounded-tl-[60px] rounded-br-[60px]"></div>
         <div className="w-[50%] md:w-full h-[250px] bg-tertiary-15 rounded-tr-[12px] rounded-br-[12px] rounded-tl-[60px] rounded-bl-[60px]" />
       </div>
-
-      <DonateButton
-        style="solid pale"
-        useShadow={true}
-        custom="hidden mt-10 mb-5"
-      />
     </div>
   );
 };

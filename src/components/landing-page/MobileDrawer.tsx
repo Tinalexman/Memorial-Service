@@ -73,11 +73,11 @@ const MobileDrawer: FC<iMobileDrawerProps> = ({
                   </div>
                 </div>
 
-                <DonateButton
+                {/* <DonateButton
                   style="solid pale"
                   useShadow={false}
                   custom="hidden mt-10 mb-5"
-                />
+                /> */}
               </div>
             </Drawer.Body>
           </Drawer.Content>

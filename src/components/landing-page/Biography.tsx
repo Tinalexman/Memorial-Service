@@ -17,6 +17,31 @@ import {
 const Biography = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const ref1 = useRef(null);
+  const isInView1 = useInView(ref1);
+
+  const ref2 = useRef(null);
+  const isInView2 = useInView(ref2);
+
+  const ref3 = useRef(null);
+  const isInView3 = useInView(ref3);
+
+  const ref4 = useRef(null);
+  const isInView4 = useInView(ref4);
+
+  const ref5 = useRef(null);
+  const isInView5 = useInView(ref5);
+
+  const ref6 = useRef(null);
+  const isInView6 = useInView(ref6);
+
+  const ref7 = useRef(null);
+  const isInView7 = useInView(ref7);
+
+  const ref8 = useRef(null);
+  const isInView8 = useInView(ref8);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -29,7 +54,7 @@ const Biography = () => {
   const slideInFromLeftHeader = useTransform(
     scrollYProgress,
     [0, 1],
-    ["-20%", "20%"]
+    ["-20%", "40%"]
   );
 
   const background = useTransform(
@@ -78,27 +103,40 @@ const Biography = () => {
             {show ? "for veterinary medicine." : "for God and community."}
           </span>
         </motion.h2>
-        <motion.div
-          animate={{
-            y: isInView ? "0%" : "25%",
-            transition: {
-              duration: 1.5,
-              ease: "easeOut",
-            },
-          }}
-          className={`flex flex-col gap-5 w-full transition-all duration-500 ${
-            show ? "max-h-max" : "max-h-0 hidden"
+        <div
+          className={`flex flex-col gap-5 w-full ${
+            !show && "md:hidden hidden"
           }`}
         >
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          <motion.h2
+            ref={ref1}
+            animate={{
+              y: isInView1 ? "0%" : "10%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Professor Fayomi&apos;s educational journey began at St. Paul&apos;s
             Primary School in Iyara. After graduating in 1962, he displayed his
             nurturing spirit by working as a kindergarten teacher at his alma
             mater for two years. However, his thirst for knowledge propelled him
             further. He attended St. Augustine&apos;s College Kabba,{" "}
             <span className="text-tertiary-20">graduating in 1969.</span>
-          </h2>
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          </motion.h2>
+          <motion.h2
+            ref={ref2}
+            animate={{
+              y: isInView2 ? "-10%" : "0%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Financing higher education was a hurdle Professor Fayomi had to
             overcome. He secured a clerical position at the Federal Ministry of
             Trade in Lagos with the help of his uncle, Chief Olumide Fayomi. It
@@ -107,8 +145,18 @@ const Biography = () => {
             Stephen encouraged him to pursue his dream of attending Ahmadu Bello
             University. This marked a turning point{" "}
             <span className="text-tertiary-20">in his life.</span>
-          </h2>
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          </motion.h2>
+          <motion.h2
+            ref={ref3}
+            animate={{
+              y: isInView3 ? "0%" : "10%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Professor Fayomi excelled at Ahmadu Bello University, his love for
             teaching blossoming further. He obtained a Doctor of Veterinary
             Medicine (DVM) degree, followed by a Master of Science (MSc) and a
@@ -118,8 +166,18 @@ const Biography = () => {
             <span className="text-tertiary-20">
               intellect and perseverance.
             </span>
-          </h2>
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          </motion.h2>
+          <motion.h2
+            ref={ref4}
+            animate={{
+              y: isInView4 ? "0%" : "10%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Professor Fayomi&apos;s dedication to academia didn&apos;t stop
             there. He joined the Department of Animal Science at Ahmadu Bello
             University as a lecturer and researcher in September 1981, a role he
@@ -130,8 +188,18 @@ const Biography = () => {
             <span className="text-tertiary-20">
               JESJEH International School Kudende Kaduna.
             </span>
-          </h2>
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          </motion.h2>
+          <motion.h2
+            ref={ref5}
+            animate={{
+              y: isInView5 ? "0%" : "10%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Professor Fayomi&apos;s life wasn&apos;t solely defined by academic
             achievements. After finding faith in Christ, he became actively
             involved in evangelism during his university days. This dedication
@@ -144,8 +212,18 @@ const Biography = () => {
             numerous parishes and even launched a magazine tract called
             &quot;Jesus Monthly&quot; to{" "}
             <span className="text-tertiary-20">spread the word of God.</span>
-          </h2>
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          </motion.h2>
+          <motion.h2
+            ref={ref6}
+            animate={{
+              y: isInView6 ? "0%" : "10%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Professor Fayomi&apos;s passion extended beyond academia and
             religion. He held a deep concern for the less fortunate, especially
             regarding education. Driven by his own experience of receiving help,
@@ -153,16 +231,36 @@ const Biography = () => {
             in need. His philosophy in life, &quot;education brings liberty and
             power&quot;, reflects his belief in education as a{" "}
             <span className="text-tertiary-20">tool for empowerment.</span>
-          </h2>
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          </motion.h2>
+          <motion.h2
+            ref={ref2}
+            animate={{
+              y: isInView2 ? "0%" : "10%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Professor Fayomi&apos;s influence transcended the university. He
             served as Provost at the Colleges of Agriculture in both Kaduna and
             Kabba, demonstrating his leadership skills and commitment to
             agricultural development. His dedication was further recognized by
             his membership in numerous professional bodies and receipt of{" "}
             <span className="text-tertiary-20">over forty awards.</span>
-          </h2>
-          <h2 className="text-tertiary-100 text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
+          </motion.h2>
+          <motion.h2
+            ref={ref8}
+            animate={{
+              y: isInView8 ? "0%" : "10%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-tertiary-100 md:text-center text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold"
+          >
             Professor Fayomi&apos;s life embodied a remarkable blend of academic
             excellence, unwavering faith, and a dedication to serving his
             community. He was a leader, a teacher, a mentor, and a man of God.
@@ -172,25 +270,19 @@ const Biography = () => {
             generation now and always&quot;, capture the essence of a life
             dedicated to service and the{" "}
             <span className="text-tertiary-20">betterment of humanity.</span>
-          </h2>
-          <div className="h-40" />
-        </motion.div>
+          </motion.h2>
+          <div className="h-40 md:h-0" />
+        </div>
         <ReadMoreContainer
           useFixed={false}
           style="black"
           text={show ? "Read less" : "Read more"}
-          custom={`absolute -bottom-10 md:static right-[10%] md:my-20 ${
+          custom={`absolute -bottom-10 md:static right-[10%] md:my-20 z-10 ${
             show && "mt-20"
           }`}
           onClick={() => {
             setShow(!show);
           }}
-        />
-
-        <DonateButton
-          style="solid yellow"
-          useShadow={true}
-          custom="hidden md:z-10 md:mb-10"
         />
       </div>
       <motion.div

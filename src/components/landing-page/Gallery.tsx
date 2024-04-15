@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
@@ -12,36 +12,36 @@ import { motion } from "framer-motion";
 import R11 from "@/public/landing-page/Row 1/JBI_0981.jpg";
 import R12 from "@/public/landing-page/Row 1/JBI_1045.jpg";
 import R13 from "@/public/landing-page/Row 1/JBI_1074.jpg";
-// import R14 from "@/public/landing-page/Row 1/JBI_1084.jpg";
-// import R15 from "@/public/landing-page/Row 1/JBI_1235.jpg";
-// import R16 from "@/public/landing-page/Row 1/JBI_1298.jpg";
-// import R17 from "@/public/landing-page/Row 1/JBI_1438.jpg";
-// import R18 from "@/public/landing-page/Row 1/JBI_2836.jpg";
-// import R19 from "@/public/landing-page/Row 1/JBI_2839.jpg";
-// import R110 from "@/public/landing-page/Row 1/JBI_2901.jpg";
-// import R111 from "@/public/landing-page/Row 1/JBI_2937.jpg";
-// import R112 from "@/public/landing-page/Row 1/JBI_2939.jpg";
-// import R113 from "@/public/landing-page/Row 1/JBI_3441.jpg";
-// import R114 from "@/public/landing-page/Row 1/JBI_3442.jpg";
-// import R115 from "@/public/landing-page/Row 1/JBI_3453.jpg";
-// import R116 from "@/public/landing-page/Row 1/JBI_3465.jpg";
+import R14 from "@/public/landing-page/Row 1/JBI_1084.jpg";
+import R15 from "@/public/landing-page/Row 1/JBI_1235.jpg";
+import R16 from "@/public/landing-page/Row 1/JBI_1298.jpg";
+import R17 from "@/public/landing-page/Row 1/JBI_1438.jpg";
+import R18 from "@/public/landing-page/Row 1/JBI_2836.jpg";
+import R19 from "@/public/landing-page/Row 1/JBI_2839.jpg";
+import R110 from "@/public/landing-page/Row 1/JBI_2901.jpg";
+import R111 from "@/public/landing-page/Row 1/JBI_2937.jpg";
+import R112 from "@/public/landing-page/Row 1/JBI_2939.jpg";
+import R113 from "@/public/landing-page/Row 1/JBI_3441.jpg";
+import R114 from "@/public/landing-page/Row 1/JBI_3442.jpg";
+import R115 from "@/public/landing-page/Row 1/JBI_3453.jpg";
+import R116 from "@/public/landing-page/Row 1/JBI_3465.jpg";
 
 import R21 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_1.jpg";
 import R22 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_3.jpg";
-// import R23 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_4.jpg";
-// import R24 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_5.jpg";
-// import R25 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_6.jpg";
-// import R26 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_7.jpg";
-// import R27 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_8.jpg";
-// import R28 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_9.jpg";
-// import R29 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_10.jpg";
-// import R210 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_11.jpg";
-// import R211 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_12.jpg";
-// import R212 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_14.jpg";
-// import R213 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_16.jpg";
-// import R214 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_17.jpg";
-// import R215 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_18.jpg";
-// import R216 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_19.jpg";
+import R23 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_4.jpg";
+import R24 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_5.jpg";
+import R25 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_6.jpg";
+import R26 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_7.jpg";
+import R27 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_8.jpg";
+import R28 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_9.jpg";
+import R29 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_10.jpg";
+import R210 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_11.jpg";
+import R211 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_12.jpg";
+import R212 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_14.jpg";
+import R213 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_16.jpg";
+import R214 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_17.jpg";
+import R215 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_18.jpg";
+import R216 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_19.jpg";
 // import R217 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_20.jpg";
 // import R218 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_21.jpg";
 // import R219 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_22.jpg";
@@ -59,71 +59,32 @@ import R22 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_3.jpg";
 // import R231 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_36.jpg";
 // import R232 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_38.jpg";
 // import R233 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_39.jpg";
-// import R234 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_40.jpg";
-// import R235 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_41.jpg";
-// import R236 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_42.jpg";
-// import R237 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_43.jpg";
 
 // import R3 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_1.jpg";
 import R31 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_2.jpg";
 import R32 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_3.jpg";
 import R33 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_4.jpg";
-// import R34 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_5.jpg";
-// import R35 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_6.jpg";
-// import R36 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_7.jpg";
-// import R37 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_8.jpg";
-// import R38 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_9.jpg";
-// import R39 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_10.jpg";
-// import R310 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_11.jpg";
-// import R311 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_12.jpg";
-// import R312 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_13.jpg";
+import R34 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_5.jpg";
+import R35 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_6.jpg";
+import R36 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_7.jpg";
+import R37 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_8.jpg";
+import R38 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_9.jpg";
+import R39 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_10.jpg";
+import R310 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_11.jpg";
+import R311 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_12.jpg";
+import R312 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_13.jpg";
+import R313 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_40.jpg";
+import R314 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_41.jpg";
+import R315 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_42.jpg";
+import R316 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_43.jpg";
 
 import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
 
 const Gallery = () => {
-  const row1: iImageProp[] = [
-    {
-      image: R11,
-    },
-    {
-      image: R12,
-    },
-    {
-      image: R13,
-    },
-    {
-      image: R12,
-    },
-  ];
-  const row2: iImageProp[] = [
-    {
-      image: R21,
-    },
-    {
-      image: R12,
-    },
-    {
-      image: R22,
-    },
-    {
-      image: R11,
-    },
-  ];
-  const row3: iImageProp[] = [
-    {
-      image: R31,
-    },
-    {
-      image: R32,
-    },
-    {
-      image: R33,
-    },
-    {
-      image: R32,
-    },
-  ];
+  const [row1, setRow1] = useState<iImageProp[]>([]);
+  const [row2, setRow2] = useState<iImageProp[]>([]);
+  const [row3, setRow3] = useState<iImageProp[]>([]);
 
   const mobileImages: iImageProp[] = [
     {
@@ -136,10 +97,19 @@ const Gallery = () => {
       image: R13,
     },
     {
+      image: R14,
+    },
+    {
       image: R21,
     },
     {
       image: R22,
+    },
+    {
+      image: R23,
+    },
+    {
+      image: R24,
     },
     {
       image: R31,
@@ -150,8 +120,189 @@ const Gallery = () => {
     {
       image: R33,
     },
+    {
+      image: R34,
+    },
   ];
+
   const [mobileIndex, setMobileIndex] = useState<number>(0);
+  const [slideIndex, setSlideIndex] = useState<number>(0);
+
+  useEffect(() => {
+    if (slideIndex === 0) {
+      setRow1([
+        {
+          image: R11,
+        },
+        {
+          image: R12,
+        },
+        {
+          image: R13,
+        },
+        {
+          image: R14,
+        },
+      ]);
+      setRow2([
+        {
+          image: R21,
+        },
+        {
+          image: R22,
+        },
+        {
+          image: R23,
+        },
+        {
+          image: R24,
+        },
+      ]);
+      setRow3([
+        {
+          image: R31,
+        },
+        {
+          image: R32,
+        },
+        {
+          image: R33,
+        },
+        {
+          image: R34,
+        },
+      ]);
+    } else if (slideIndex === 1) {
+      setRow1([
+        {
+          image: R15,
+        },
+        {
+          image: R16,
+        },
+        {
+          image: R17,
+        },
+        {
+          image: R18,
+        },
+      ]);
+      setRow2([
+        {
+          image: R25,
+        },
+        {
+          image: R26,
+        },
+        {
+          image: R27,
+        },
+        {
+          image: R28,
+        },
+      ]);
+      setRow3([
+        {
+          image: R35,
+        },
+        {
+          image: R36,
+        },
+        {
+          image: R37,
+        },
+        {
+          image: R38,
+        },
+      ]);
+    } else if (slideIndex === 2) {
+      setRow1([
+        {
+          image: R19,
+        },
+        {
+          image: R110,
+        },
+        {
+          image: R111,
+        },
+        {
+          image: R112,
+        },
+      ]);
+      setRow2([
+        {
+          image: R29,
+        },
+        {
+          image: R210,
+        },
+        {
+          image: R211,
+        },
+        {
+          image: R212,
+        },
+      ]);
+      setRow3([
+        {
+          image: R39,
+        },
+        {
+          image: R310,
+        },
+        {
+          image: R311,
+        },
+        {
+          image: R312,
+        },
+      ]);
+    } else if (slideIndex === 3) {
+      setRow1([
+        {
+          image: R113,
+        },
+        {
+          image: R114,
+        },
+        {
+          image: R115,
+        },
+        {
+          image: R116,
+        },
+      ]);
+      setRow2([
+        {
+          image: R213,
+        },
+        {
+          image: R214,
+        },
+        {
+          image: R215,
+        },
+        {
+          image: R216,
+        },
+      ]);
+      setRow3([
+        {
+          image: R313,
+        },
+        {
+          image: R314,
+        },
+        {
+          image: R315,
+        },
+        {
+          image: R316,
+        },
+      ]);
+    }
+  }, [slideIndex]);
 
   return (
     <div
@@ -170,10 +321,20 @@ const Gallery = () => {
           </p>
         </div>
         <div className="w-[224px] h-[100px] flex items-center justify-between md:hidden">
-          <div className="w-[100px] h-[100px] text-primary-10 border border-primary-10 rounded-full flex items-center justify-center">
+          <div
+            onClick={() => {
+              setSlideIndex(slideIndex === 0 ? 3 : slideIndex - 1);
+            }}
+            className="w-[100px] h-[100px] text-primary-10 border border-primary-10 rounded-full flex items-center justify-center cursor-pointer"
+          >
             <GoArrowLeft size={"26px"} />
           </div>
-          <div className="w-[100px] h-[100px] text-tertiary-100 bg-primary-10 rounded-full flex items-center justify-center">
+          <div
+            onClick={() => {
+              setSlideIndex(slideIndex === 3 ? 0 : slideIndex + 1);
+            }}
+            className="w-[100px] h-[100px] text-tertiary-100 bg-primary-10 rounded-full flex items-center justify-center cursor-pointer"
+          >
             <GoArrowRight size={"26px"} />
           </div>
         </div>
@@ -304,25 +465,25 @@ const Gallery = () => {
       <div className="hidden md:flex flex-col items-center mt-0 gap-[60px] px-[5%]">
         <ImageContainer image={mobileImages[mobileIndex].image} />
         <div className="w-[134px] h-[60px] flex items-center justify-between">
-          <div className="w-[60px] h-[60px]  text-primary-10 border border-primary-10 rounded-full flex items-center justify-center">
-            <GoArrowLeft
-              size={"18px"}
-              onClick={() => {
-                setMobileIndex(
-                  mobileIndex === 0 ? mobileImages.length - 1 : mobileIndex - 1
-                );
-              }}
-            />
+          <div
+            onClick={() => {
+              setMobileIndex(
+                mobileIndex === 0 ? mobileImages.length - 1 : mobileIndex - 1
+              );
+            }}
+            className="w-[60px] h-[60px]  text-primary-10 border border-primary-10 rounded-full flex items-center justify-center"
+          >
+            <GoArrowLeft size={"18px"} />
           </div>
-          <div className="w-[60px] h-[60px] text-tertiary-100 bg-primary-10 rounded-full flex items-center justify-center">
-            <GoArrowRight
-              size={"18px"}
-              onClick={() => {
-                setMobileIndex(
-                  mobileIndex === mobileImages.length - 1 ? 0 : mobileIndex + 1
-                );
-              }}
-            />
+          <div
+            onClick={() => {
+              setMobileIndex(
+                mobileIndex === mobileImages.length - 1 ? 0 : mobileIndex + 1
+              );
+            }}
+            className="w-[60px] h-[60px] text-tertiary-100 bg-primary-10 rounded-full flex items-center justify-center"
+          >
+            <GoArrowRight size={"18px"} />
           </div>
         </div>
       </div>
@@ -353,12 +514,12 @@ const ImageContainer: FC<iImageProp> = ({ image }) => {
         onMouseLeave={() => {
           setShow(false);
         }}
-        className="w-[23%] md:w-full h-[320px] rounded-[12px] cursor-pointer flex justify-center items-center relative"
+        className="w-[22.5%] md:w-full h-[320px] overflow-hidden rounded-[12px] cursor-pointer flex justify-center items-center relative"
       >
         <Image
           src={image}
           alt="image"
-          className="w-[100%] h-[320px] object-cover rounded-[12px]"
+          className="w-[100%] h-[320px] object-cover"
         />
         <div
           className={`w-full md:hidden h-full flex items-center absolute justify-center transition-opacity duration-500  ease-in-out ${
@@ -386,15 +547,11 @@ const ImageContainer: FC<iImageProp> = ({ image }) => {
         <Modal.Overlay />
         <Modal.Content>
           <Modal.Body>
-            <div className="w-full relative">
-              <Image src={image} alt="image" className="w-full h-auto" />
-              <div
-                onClick={close}
-                className="size-8 bg-primary-10 rounded-lg absolute top-2 right-2 flex justify-center items-center cursor-pointer"
-              >
-                <IoMdClose size={"26px"} className="text-primary-base" />
-              </div>
-            </div>
+            <Image
+              src={image}
+              alt="image"
+              className="w-full h-[400px] object-cover"
+            />
           </Modal.Body>
         </Modal.Content>
       </Modal.Root>

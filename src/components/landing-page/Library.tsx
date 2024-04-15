@@ -69,7 +69,6 @@ const Library = () => {
           style="black"
           text="Read more"
         />
-        <DonateButton style="solid yellow" useShadow={true} />
       </div>
     </div>
   );
