@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 interface iReadMoreProps {
   style: "black" | "yellow";
-  text: "Read more" | "Read less" | "Donate";
+  text: "Read more" | "Read less" | "Donate" | "";
   custom?: string;
   useFixed: boolean;
   onClick: () => void;
@@ -40,7 +40,7 @@ const ReadMoreContainer: FC<iReadMoreProps> = ({
       } cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1`}
     >
       <p>{text}</p>
-      <BsArrowUpRight size={"16px"} />
+      {text !== "" && <BsArrowUpRight size={"16px"} />}
     </motion.div>
   );
 };

@@ -1,7 +1,5 @@
 import React, { useRef } from "react";
 
-import { BsArrowUpRight } from "react-icons/bs";
-
 import Image from "next/image";
 import Arrow from "@/public/landing-page/Long Arrow.svg";
 import DoveMarquee from "../resuable/DoveMarquee";
@@ -13,7 +11,9 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 const Announcement = () => {
   const ref = useRef(null);
+  const ageRef = useRef(null);
   const inView = useInView(ref);
+  const isAgeInView = useInView(ageRef);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -76,14 +76,23 @@ const Announcement = () => {
         </div>
       </div>
 
-      <div className="flex md:flex-col-reverse md:gap-12 w-full justify-between items-center mt-[72px] pl-[200px] md:pl-[5%] md:pr-[5%]">
+      <div ref={ageRef} className="flex md:flex-col-reverse md:gap-12 w-full justify-between items-center mt-[72px] pl-[200px] md:pl-[5%] md:pr-[5%]">
         <ReadMoreContainer
           useFixed={false}
           style="yellow"
           text="Read more"
           onClick={() => {}}
         />
-        <div className="h-[210px] md:h-[140px] border border-[#862D37] border-x-0 w-[55%] md:w-full flex gap-[60px] md:gap-0 md:justify-between justify-start items-center">
+        <motion.div
+          animate={{
+            x: isAgeInView ? "0%" : "40%",
+            transition: {
+              ease: "easeOut",
+              duration: 1.5,
+            }
+          }}
+        
+        className="h-[210px] md:h-[140px] border border-[#862D37] border-x-0 w-[55%] md:w-full flex gap-[60px] md:gap-0 md:justify-between justify-start items-center">
           <h2 className="text-white text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold">
             Age
           </h2>
@@ -95,7 +104,7 @@ const Announcement = () => {
           <h1 className="font-semibold text-[132px] md:text-[80px] leading-[132px] md:leading-[80px] text-primary-base">
             75
           </h1>
-        </div>
+        </motion.div>
       </div>
 
       <div className="mt-20 w-full">

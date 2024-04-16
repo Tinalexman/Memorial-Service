@@ -83,7 +83,7 @@ const Banner = () => {
                 x: inView ? "0%" : "20%",
                 transition: {
                   duration: 3,
-                  ease: "circIn",
+                  ease: "easeIn",
                 },
               }}
               className="font-light text-primary-10 text-[calc(3.5vh)] md:text-[14px] leading-[calc(4vh)] md:leading-[21px]"
@@ -95,7 +95,7 @@ const Banner = () => {
                 x: inView ? "0%" : "-20%",
                 transition: {
                   duration: 3,
-                  ease: "circOut",
+                  ease: "easeOut",
                 },
               }}
               className="font-normal text-primary-10 text-[calc(5vh)] md:text-[16px] leading-[calc(6vh)] md:leading-[26px]"

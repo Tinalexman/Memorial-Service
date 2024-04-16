@@ -1,12 +1,13 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { useRef } from "react";
 import Logo from "./Logo";
 import { FaBarsStaggered } from "react-icons/fa6";
 
 import { useDisclosure } from "@mantine/hooks";
 import MobileDrawer from "../landing-page/MobileDrawer";
 import DonateButton from "./DonateButton";
+import { motion, useInView } from "framer-motion";
 
 export interface iNavItem {
   name: string;
@@ -40,9 +41,22 @@ const Navbar = () => {
   const [openedDrawer, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
 
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
     <>
-      <div className="flex justify-between items-center w-full">
+      <motion.div
+        animate={{
+          y: inView ? "0%" : "-20%",
+          transition: {
+            duration: 0.75,
+            ease: "easeOut",
+          },
+        }}
+        ref={ref}
+        className="flex justify-between items-center w-full"
+      >
         <Logo whiteText={true} />
         <div className="flex items-center gap-10 w-fit md:hidden">
           {navs.map((nav, i) => {
@@ -71,7 +85,7 @@ const Navbar = () => {
           onClick={openDrawer}
           className="text-primary-10 md:block hidden"
         />
-      </div>
+      </motion.div>
       <MobileDrawer
         closeDrawer={closeDrawer}
         menus={navs}

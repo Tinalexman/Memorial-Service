@@ -41,7 +41,7 @@ const Footer = () => {
             onClick={() => {}}
             useFixed={false}
             style="yellow"
-            text="Donate"
+            text=""
           />
           <motion.div
             animate={{

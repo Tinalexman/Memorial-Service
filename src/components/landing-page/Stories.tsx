@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ImArrowUpRight2 } from "react-icons/im";
 import DonateButton from "../resuable/DonateButton";
 
 import Image from "next/image";
 import R11 from "@/public/landing-page/R13.png";
 
+import { motion, useInView } from "framer-motion";
+
 const Stories = () => {
+  const headerRef = useRef(null);
+  const isHeaderInView = useInView(headerRef);
+
   return (
     <div
       id="story-div"
       className="w-[100vw] h-auto bg-tertiary-100 py-28 px-[200px] md:px-[5%] flex flex-col items-center"
     >
-      <h1 className="text-[100px] md:text-[60px] leading-[100px] text-primary-10 font-extrabold">
+      <motion.h1
+        ref={headerRef}
+        animate={{
+          scale: isHeaderInView ? 1.0 : 0.4,
+          transition: {
+            duration: 1.5,
+            ease: "easeOut",
+          },
+        }}
+        className="text-[100px] md:text-[60px] leading-[100px] text-primary-10 font-extrabold"
+      >
         STORIES
-      </h1>
+      </motion.h1>
 
       <div className="flex md:flex-col w-full gap-[34px] mt-12 items-center">
         <div className="w-[50%] md:w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] flex items-center justify-center relative">
