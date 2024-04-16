@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import ReadMoreContainer from "../resuable/ReadMoreContainer";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 interface iBook {
   title: string;
@@ -17,22 +17,44 @@ const Library = () => {
     year: "2023",
   });
 
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
     <div
       id="library-div"
+      ref={ref}
       className="w-[100vw] px-[200px] md:px-[5%] bg-white py-24 md:py-16 flex flex-col gap-24 md:gap-20"
     >
       <div className="flex md:flex-col justify-between w-full relative md:static md:items-center">
         <div className="flex flex-col gap-5 md:gap-4 w-[50%] md:w-full ">
-          <h1 className="text-[100px] md:text-[60px] text-tertiary-100 leading-[100px] font-extrabold md:text-center">
+          <motion.h1
+            animate={{
+              x: inView ? "0%" : "-20%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-[100px] md:text-[60px] text-tertiary-100 leading-[100px] font-extrabold md:text-center"
+          >
             LIBRARY
-          </h1>
-          <p className="font-normal text-tertiary-100 text-[20px] leading-[30px] md:text-center">
+          </motion.h1>
+          <motion.p
+            animate={{
+              x: inView ? "0%" : "20%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="font-normal text-tertiary-100 text-[20px] leading-[30px] md:text-center"
+          >
             This section is a digital archive, meticulously curated to honor
-            Professor Jacob Adeleke Fayomi&apos;s legacy. It features a selection of books authored by the
-            professor, each one a testament to his expertise and dedication to
-            his field.
-          </p>
+            Professor Jacob Adeleke Fayomi&apos;s legacy. It features a
+            selection of books authored by the professor, each one a testament
+            to his expertise and dedication to his field.
+          </motion.p>
         </div>
         <div className="w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 absolute -bottom-10 md:hidden right-[10%] md:my-20">
           <p>Read more</p>
@@ -43,7 +65,14 @@ const Library = () => {
       <div className="flex flex-col md:gap-[60px]">
         {books.map((book, i) => {
           return (
-            <div
+            <motion.div
+              animate={{
+                x: inView ? "0%" : (i % 2 === 0 ? "-20%" : "50%"),
+                transition: {
+                  duration: 1.5,
+                  ease: "easeOut",
+                },
+              }}
               key={i}
               className="h-[120px] md:h-auto w-full flex md:flex-col md:items-start items-center justify-between border-b md:border-none border-tertiary-10"
             >
@@ -59,7 +88,7 @@ const Library = () => {
                   {book.year}
                 </p>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

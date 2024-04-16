@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+
+
 
 const Tributes = () => {
   const [index, setIndex] = useState<number>(0);
@@ -170,16 +172,28 @@ const Tributes = () => {
     },
   ];
 
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
     <div
       id="tribute-div"
+      ref={ref}
       className="w-[100vw] px-[200px] md:px-[5%] bg-white py-24 md:py-16 flex flex-col items-center gap-24 md:gap-20 transition-all ease-in-out duration-500"
     >
       <div className="flex md:flex-col items-center w-full justify-between">
         <h1 className="text-[100px] md:text-[60px] text-tertiary-100 leading-[100px] font-extrabold md:text-center">
           TRIBUTES
         </h1>
-        <div className="w-[224px] h-[100px] flex items-center justify-between md:hidden">
+        <motion.div
+          animate={{
+            x: inView ? "0%" : "50%",
+            transition: {
+              duration: 1.5,
+              ease: "easeIn",
+            }
+          }}
+        className="w-[224px] h-[100px] flex items-center justify-between md:hidden">
           <div
             onClick={() => {
               setDirection(-1);
@@ -198,7 +212,7 @@ const Tributes = () => {
           >
             <GoArrowRight size={"26px"} />
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <motion.div

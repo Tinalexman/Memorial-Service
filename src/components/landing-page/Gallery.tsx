@@ -1,13 +1,13 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import DoveMarquee from "../resuable/DoveMarquee";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import R11 from "@/public/landing-page/Row 1/JBI_0981.jpg";
 import R12 from "@/public/landing-page/Row 1/JBI_1045.jpg";
@@ -82,9 +82,50 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
 
 const Gallery = () => {
-  const [row1, setRow1] = useState<iImageProp[]>([]);
-  const [row2, setRow2] = useState<iImageProp[]>([]);
-  const [row3, setRow3] = useState<iImageProp[]>([]);
+  const row1: iImageProp[] = [
+    {
+      image: R11,
+    },
+    {
+      image: R12,
+    },
+    {
+      image: R13,
+    },
+    {
+      image: R14,
+    },
+  ];
+
+  const row2: iImageProp[] = [
+    {
+      image: R21,
+    },
+    {
+      image: R22,
+    },
+    {
+      image: R23,
+    },
+    {
+      image: R24,
+    },
+  ];
+
+  const row3: iImageProp[] = [
+    {
+      image: R31,
+    },
+    {
+      image: R32,
+    },
+    {
+      image: R33,
+    },
+    {
+      image: R34,
+    },
+  ];
 
   const mobileImages: iImageProp[] = [
     {
@@ -99,18 +140,7 @@ const Gallery = () => {
     {
       image: R14,
     },
-    {
-      image: R15,
-    },
-    {
-      image: R16,
-    },
-    {
-      image: R17,
-    },
-    {
-      image: R18,
-    },
+
     {
       image: R21,
     },
@@ -123,18 +153,7 @@ const Gallery = () => {
     {
       image: R24,
     },
-    {
-      image: R25,
-    },
-    {
-      image: R26,
-    },
-    {
-      image: R27,
-    },
-    {
-      image: R28,
-    },
+
     {
       image: R31,
     },
@@ -147,218 +166,42 @@ const Gallery = () => {
     {
       image: R34,
     },
-    {
-      image: R35,
-    },
-    {
-      image: R36,
-    },
-    {
-      image: R37,
-    },
-    {
-      image: R38,
-    },
-    {
-      image: R39,
-    },
   ];
 
   const [mobileIndex, setMobileIndex] = useState<number>(0);
-  const [slideIndex, setSlideIndex] = useState<number>(0);
-
-  useEffect(() => {
-    if (slideIndex === 0) {
-      setRow1([
-        {
-          image: R11,
-        },
-        {
-          image: R12,
-        },
-        {
-          image: R13,
-        },
-        {
-          image: R14,
-        },
-      ]);
-      setRow2([
-        {
-          image: R21,
-        },
-        {
-          image: R22,
-        },
-        {
-          image: R23,
-        },
-        {
-          image: R24,
-        },
-      ]);
-      setRow3([
-        {
-          image: R31,
-        },
-        {
-          image: R32,
-        },
-        {
-          image: R33,
-        },
-        {
-          image: R34,
-        },
-      ]);
-    } else if (slideIndex === 1) {
-      setRow1([
-        {
-          image: R15,
-        },
-        {
-          image: R16,
-        },
-        {
-          image: R17,
-        },
-        {
-          image: R18,
-        },
-      ]);
-      setRow2([
-        {
-          image: R25,
-        },
-        {
-          image: R26,
-        },
-        {
-          image: R27,
-        },
-        {
-          image: R28,
-        },
-      ]);
-      setRow3([
-        {
-          image: R35,
-        },
-        {
-          image: R36,
-        },
-        {
-          image: R37,
-        },
-        {
-          image: R38,
-        },
-      ]);
-    } else if (slideIndex === 2) {
-      setRow1([
-        {
-          image: R19,
-        },
-        {
-          image: R110,
-        },
-        {
-          image: R111,
-        },
-        {
-          image: R112,
-        },
-      ]);
-      setRow2([
-        {
-          image: R29,
-        },
-        {
-          image: R210,
-        },
-        {
-          image: R211,
-        },
-        {
-          image: R212,
-        },
-      ]);
-      setRow3([
-        {
-          image: R39,
-        },
-        {
-          image: R310,
-        },
-        {
-          image: R311,
-        },
-        {
-          image: R312,
-        },
-      ]);
-    } else if (slideIndex === 3) {
-      setRow1([
-        {
-          image: R113,
-        },
-        {
-          image: R114,
-        },
-        {
-          image: R115,
-        },
-        {
-          image: R116,
-        },
-      ]);
-      setRow2([
-        {
-          image: R213,
-        },
-        {
-          image: R214,
-        },
-        {
-          image: R215,
-        },
-        {
-          image: R216,
-        },
-      ]);
-      setRow3([
-        {
-          image: R313,
-        },
-        {
-          image: R314,
-        },
-        {
-          image: R315,
-        },
-        {
-          image: R316,
-        },
-      ]);
-    }
-  }, [slideIndex]);
+  const ref = useRef(null);
+  const inView = useInView(ref);
 
   return (
     <div
+      ref={ref}
       id="gallery-div"
       className="flex flex-col w-[100vw] h-auto bg-tertiary-100"
     >
       <div className="flex w-full justify-between px-[200px] py-24 md:py-16 md:px-[5%]">
         <div className="flex flex-col gap-5 md:gap-4 w-[50%] md:w-full ">
-          <h1 className="text-[100px] md:text-[60px] text-primary-10 leading-[100px] font-extrabold md:text-center">
+          <motion.h1 animate={{
+              x: inView ? "0%" : "-20%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }} className="text-[100px] md:text-[60px] text-primary-10 leading-[100px] font-extrabold md:text-center">
             GALLERY
-          </h1>
-          <p className="font-normal text-primary-10 text-[20px] leading-[30px] md:text-center">
-            This section is a heartfelt tribute to the life and work of Professor Jacob Adeleke Fayomi. This
-            digital space is a curated collection of images that capture the
-            essence of the professor&apos;s life, achievements, and the moments that
-            defined his journey.
-          </p>
+          </motion.h1>
+          <motion.p animate={{
+              x: inView ? "0%" : "20%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }} className="font-normal text-primary-10 text-[20px] leading-[30px] md:text-center">
+            This section is a heartfelt tribute to the life and work of
+            Professor Jacob Adeleke Fayomi. This digital space is a curated
+            collection of images that capture the essence of the
+            professor&apos;s life, achievements, and the moments that defined
+            his journey.
+          </motion.p>
         </div>
         {/* <div className="w-[224px] h-[100px] flex items-center justify-between md:hidden">
           <div
