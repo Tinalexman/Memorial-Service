@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
-import DonateButton from "../resuable/DonateButton";
 import ReadMoreContainer from "../resuable/ReadMoreContainer";
 
 interface iBook {

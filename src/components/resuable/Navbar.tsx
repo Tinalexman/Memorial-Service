@@ -28,6 +28,10 @@ const Navbar = () => {
       link: "library-div",
     },
     {
+      name: "Tributes",
+      link: "tribute-div",
+    },
+    {
       name: "Gallery",
       link: "gallery-div",
     },

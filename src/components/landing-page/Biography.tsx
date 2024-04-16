@@ -93,8 +93,22 @@ const Biography = () => {
         >
           Professor Venerable Jacob Adeleke Fayomi&apos;s life story is a
           testament to the power of hard work, dedication, and a deep love{" "}
-          {show &&
-            "for God and community. Born into a large, polygamous family in Iyara Ijumu, Kogi State, Nigeria, Professor Fayomi was the fifth of twelve children. His father, Chief Jonah Awogbemi, was a prominent farmer, and this instilled in young Jacob a love for agriculture, which later blossomed into a passion "}
+          <motion.span
+              animate={{
+                x: ["100%", "0%"],
+                transition: {
+                  ease: "easeOut",
+                  duration: 3,
+                }
+              }}
+              className={`${!show && "hidden"}`}
+            >
+              for God and community. Born into a large, polygamous family in
+              Iyara Ijumu, Kogi State, Nigeria, Professor Fayomi was the fifth
+              of twelve children. His father, Chief Jonah Awogbemi, was a
+              prominent farmer, and this instilled in young Jacob a love for
+              agriculture, which later blossomed into a passion {" "}
+            </motion.span>
           <span className="text-tertiary-20">
             {show ? "for veterinary medicine." : "for God and community."}
           </span>

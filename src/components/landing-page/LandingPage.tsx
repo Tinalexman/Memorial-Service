@@ -9,6 +9,7 @@ import Stories from "./Stories";
 import Library from "./Library";
 import Gallery from "./Gallery";
 import Footer from "../resuable/Footer";
+import Tributes from "./Tributes";
 
 const LandingPage = async () => {
   //await new Promise((resolve) => setTimeout(resolve, 5000));
@@ -20,6 +21,7 @@ const LandingPage = async () => {
       <Announcement />
       <Stories />
       <Library />
+      <Tributes />
       <Gallery />
       <Footer />
     </div>
