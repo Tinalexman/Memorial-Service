@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import ReadMoreContainer from "../resuable/ReadMoreContainer";
+
+import { motion } from "framer-motion";
 
 interface iBook {
   title: string;

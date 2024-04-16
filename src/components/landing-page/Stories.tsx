@@ -11,6 +11,9 @@ const Stories = () => {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef);
 
+  const storiesRef = useRef(null);
+  const isStoriesInView = useInView(storiesRef);
+
   return (
     <div
       id="story-div"
@@ -30,12 +33,68 @@ const Stories = () => {
         STORIES
       </motion.h1>
 
-      <div className="flex md:flex-col w-full gap-[34px] mt-12 items-center">
-        <div className="w-[50%] md:w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] flex items-center justify-center relative">
+      <div
+        ref={storiesRef}
+        className="flex md:flex-col w-full gap-[34px] mt-12 items-center"
+      >
+        <motion.div
+          animate={{
+            x: isStoriesInView ? "0%" : "-50%",
+            transition: {
+              duration: 1.5,
+              ease: "easeOut",
+            },
+          }}
+          className="w-[50%] md:w-full h-[250px] overflow-hidden rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] flex items-center justify-center relative"
+        >
+          <Image src={R11} alt="image" className="w-full h-full object-cover" />
+          <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2 absolute">
+            <h3 className="text-[#A27E82] font-extrabold text-[10px] leading-[15px]">
+              CHURCH
+            </h3>
+            <p className="text-secondary-base font-extrabold text-[14px] leading-[20px]">
+              PREACHING
+            </p>
+            <ImArrowUpRight2 size={"16px"} className="text-secondary-base" />
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{
+            x: isStoriesInView ? "0%" : "50%",
+            transition: {
+              duration: 1.5,
+              ease: "easeOut",
+            },
+          }}
+          className="w-[50%] md:w-full h-[250px] overflow-hidden bg-tertiary-15 rounded-bl-[12px] rounded-tr-[12px] rounded-br-[60px] rounded-tl-[60px] relative flex items-center justify-center"
+        >
+          <Image src={R11} alt="image" className="w-full h-full object-cover" />
+          <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2 absolute">
+            <h3 className="text-[#A27E82] font-extrabold text-[10px] leading-[15px]">
+              CHURCH
+            </h3>
+            <p className="text-secondary-base font-extrabold text-[14px] leading-[20px]">
+              PREACHING
+            </p>
+            <ImArrowUpRight2 size={"16px"} className="text-secondary-base" />
+          </div>
+        </motion.div>
+      </div>
+      <div className="flex md:flex-col w-full gap-[34px] mt-[34px] items-center">
+        <motion.div
+          animate={{
+            x: isStoriesInView ? "0%" : "-50%",
+            transition: {
+              duration: 1.5,
+              ease: "easeOut",
+            },
+          }}
+          className="w-[50%] md:w-full h-[250px] overflow-hidden bg-tertiary-15 rounded-tr-[12px] rounded-bl-[12px] rounded-tl-[60px] rounded-br-[60px] relative flex items-center justify-center"
+        >
           <Image
             src={R11}
             alt="image"
-            className="w-full h-[250px] rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2 absolute">
             <h3 className="text-[#A27E82] font-extrabold text-[10px] leading-[15px]">
@@ -46,12 +105,32 @@ const Stories = () => {
             </p>
             <ImArrowUpRight2 size={"16px"} className="text-secondary-base" />
           </div>
-        </div>
-        <div className="w-[50%] md:w-full h-[250px] bg-tertiary-15 rounded-bl-[12px] rounded-tr-[12px] rounded-br-[60px] rounded-tl-[60px]" />
-      </div>
-      <div className="flex md:flex-col w-full gap-[34px] mt-[34px] items-center">
-        <div className="w-[50%] md:w-full h-[250px] bg-tertiary-15 rounded-tr-[12px] rounded-bl-[12px] rounded-tl-[60px] rounded-br-[60px]"></div>
-        <div className="w-[50%] md:w-full h-[250px] bg-tertiary-15 rounded-tr-[12px] rounded-br-[12px] rounded-tl-[60px] rounded-bl-[60px]" />
+        </motion.div>
+        <motion.div
+          animate={{
+            x: isStoriesInView ? "0%" : "50%",
+            transition: {
+              duration: 1.5,
+              ease: "easeOut",
+            },
+          }}
+          className="w-[50%] md:w-full h-[250px] overflow-hidden rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] relative flex items-center justify-center"
+        >
+          <Image
+            src={R11}
+            alt="image"
+            className="w-full h-full object-cover"
+          />
+          <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2 absolute">
+            <h3 className="text-[#A27E82] font-extrabold text-[10px] leading-[15px]">
+              CHURCH
+            </h3>
+            <p className="text-secondary-base font-extrabold text-[14px] leading-[20px]">
+              PREACHING
+            </p>
+            <ImArrowUpRight2 size={"16px"} className="text-secondary-base" />
+          </div>
+        </motion.div>
       </div>
     </div>
   );
