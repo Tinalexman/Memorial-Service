@@ -100,6 +100,42 @@ const Gallery = () => {
       image: R14,
     },
     {
+      image: R15,
+    },
+    {
+      image: R16,
+    },
+    {
+      image: R17,
+    },
+    {
+      image: R18,
+    },
+    {
+      image: R19,
+    },
+    {
+      image: R110,
+    },
+    {
+      image: R111,
+    },
+    {
+      image: R112,
+    },
+    {
+      image: R113,
+    },
+    {
+      image: R114,
+    },
+    {
+      image: R115,
+    },
+    {
+      image: R116,
+    },
+    {
       image: R21,
     },
     {
@@ -112,6 +148,42 @@ const Gallery = () => {
       image: R24,
     },
     {
+      image: R25,
+    },
+    {
+      image: R26,
+    },
+    {
+      image: R27,
+    },
+    {
+      image: R28,
+    },
+    {
+      image: R29,
+    },
+    {
+      image: R210,
+    },
+    {
+      image: R211,
+    },
+    {
+      image: R212,
+    },
+    {
+      image: R213,
+    },
+    {
+      image: R214,
+    },
+    {
+      image: R215,
+    },
+    {
+      image: R216,
+    },
+    {
       image: R31,
     },
     {
@@ -122,6 +194,42 @@ const Gallery = () => {
     },
     {
       image: R34,
+    },
+    {
+      image: R35,
+    },
+    {
+      image: R36,
+    },
+    {
+      image: R37,
+    },
+    {
+      image: R38,
+    },
+    {
+      image: R39,
+    },
+    {
+      image: R310,
+    },
+    {
+      image: R311,
+    },
+    {
+      image: R312,
+    },
+    {
+      image: R313,
+    },
+    {
+      image: R314,
+    },
+    {
+      image: R315,
+    },
+    {
+      image: R316,
     },
   ];
 
