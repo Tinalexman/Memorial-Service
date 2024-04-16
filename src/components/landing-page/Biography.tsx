@@ -47,10 +47,6 @@ const Biography = () => {
     offset: ["start end", "end start"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(latest);
-  });
-
   const slideInFromLeftHeader = useTransform(
     scrollYProgress,
     [0, 1],
