@@ -281,6 +281,13 @@ const Biography = () => {
             show && "mt-20"
           }`}
           onClick={() => {
+            if (show) {
+              const element: HTMLElement | null =
+                document.getElementById("biography-div");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
             setShow(!show);
           }}
         />
