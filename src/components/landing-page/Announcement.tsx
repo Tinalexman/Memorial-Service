@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { BsArrowUpRight } from "react-icons/bs";
 
@@ -7,25 +7,72 @@ import Arrow from "@/public/landing-page/Long Arrow.svg";
 import DoveMarquee from "../resuable/DoveMarquee";
 import ReadMoreContainer from "../resuable/ReadMoreContainer";
 
+import Prof from "@/public/landing-page/Row 1/JBI_2937.jpg";
+
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+
 const Announcement = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const slideInFromRightHeader = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["30%", "0%"]
+  );
+
   return (
-    <div className="w-[100vw] h-auto bg-tertiary-100 flex flex-col py-24 md:py-[20px] ">
+    <div
+      className="w-[100vw] h-auto bg-tertiary-100 flex flex-col py-24 md:py-[20px] "
+      ref={ref}
+    >
       <div className="flex md:flex-col w-full gap-20 md:gap-10 px-[200px] md:px-[5%] md:pt-20 md:pb-0">
         <div className="w-[40%] md:w-full flex flex-col gap-[50px] md:gap-[25px]">
-          <h3 className="text-tertiary-15 font-[700] text-[20px] md:text-[16px] leading-[30px] md:leading-[24px] md:text-center">
+          <motion.h3
+            style={{ x: slideInFromRightHeader }}
+            className="text-tertiary-15 font-[700] text-[20px] md:text-[16px] leading-[30px] md:leading-[24px] md:text-center"
+          >
             BURIAL ANNOUNCEMENT
-          </h3>
-          <div className="w-full h-[300px] bg-tertiary-10" />
+          </motion.h3>
+          <motion.div
+            animate={{
+              y: inView ? "0%" : "25%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="w-full h-[300px]"
+          >
+            <Image
+              src={Prof}
+              alt="Prof Fayomi"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </div>
         <div className="w-[50%] md:w-full flex flex-col ">
-          <h2 className="text-white text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold md:text-center">
-            It is with Jesus Joy that we announce the burial arrangements for
-            our dearly departed Father, Ven. Professor Jacob Adeleke Fayomi, who
-            peacefully{" "}
+          <motion.h2
+            animate={{
+              x: inView ? "0%" : "25%",
+              transition: {
+                duration: 1.5,
+                ease: "easeOut",
+              },
+            }}
+            className="text-white text-[36px] md:text-[26px] leading-[54px] md:leading-[39px] font-semibold md:text-center"
+          >
+            With deepest sorrow, we announce the burial arrangements for our
+            beloved Father, Ven. Professor Jacob Adeleke Fayomi, who peacefully{" "}
             <span className="text-tertiary-20">
               passed away on the 4th of March 2024.
             </span>
-          </h2>
+          </motion.h2>
         </div>
       </div>
 

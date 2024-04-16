@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Image from "next/image";
 import Background from "@/public/landing-page/background.png";
@@ -8,12 +8,18 @@ import Navbar from "@/src/components/resuable/Navbar";
 
 import { FiArrowDown } from "react-icons/fi";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import DonateButton from "../resuable/DonateButton";
 
 const Banner = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
-    <div className="w-[100vw] h-[100vh] pb-20 relative bg-black overflow-clip">
+    <div
+      ref={ref}
+      className="w-[100vw] h-[100vh] pb-20 relative bg-black overflow-clip"
+    >
       <Image
         src={Background}
         alt="background"
@@ -72,18 +78,54 @@ const Banner = () => {
             className="w-[calc(18vh)] md:w-[calc(15vh)] h-auto"
           />
           <div className="w-full flex flex-col items-center mt-[5vh] md:mt-8">
-            <h3 className="font-light text-primary-10 text-[calc(3.5vh)] md:text-[14px] leading-[calc(4vh)] md:leading-[21px]">
+            <motion.h3
+              animate={{
+                x: inView ? "0%" : "20%",
+                transition: {
+                  duration: 3,
+                  ease: "circIn",
+                },
+              }}
+              className="font-light text-primary-10 text-[calc(3.5vh)] md:text-[14px] leading-[calc(4vh)] md:leading-[21px]"
+            >
               THE LATE
-            </h3>
-            <h2 className="font-normal text-primary-10 text-[calc(5vh)] md:text-[16px] leading-[calc(6vh)] md:leading-[26px]">
+            </motion.h3>
+            <motion.h2
+              animate={{
+                x: inView ? "0%" : "-20%",
+                transition: {
+                  duration: 3,
+                  ease: "circOut",
+                },
+              }}
+              className="font-normal text-primary-10 text-[calc(5vh)] md:text-[16px] leading-[calc(6vh)] md:leading-[26px]"
+            >
               VENERABLE PROFESSOR
-            </h2>
-            <h1 className="text-primary-base font-extrabold text-[calc(10vh)] md:text-[36px] leading-[calc(10vh)] md:leading-[40px]">
+            </motion.h2>
+            <motion.h1
+              animate={{
+                y: inView ? "0%" : "20%",
+                transition: {
+                  duration: 3,
+                  ease: "easeIn",
+                },
+              }}
+              className="text-primary-base font-extrabold text-[calc(10vh)] md:text-[36px] leading-[calc(10vh)] md:leading-[40px]"
+            >
               JACOB ADELEKE
-            </h1>
-            <h1 className="text-primary-10 font-extrabold text-[calc(23vh)] md:text-[80px] leading-[calc(23vh)] md:leading-[80px]">
+            </motion.h1>
+            <motion.h1
+              animate={{
+                y: inView ? "0%" : "-20%",
+                transition: {
+                  duration: 3,
+                  ease: "easeOut",
+                },
+              }}
+              className="text-primary-10 font-extrabold text-[calc(23vh)] md:text-[80px] leading-[calc(23vh)] md:leading-[80px]"
+            >
               FAYOMI
-            </h1>
+            </motion.h1>
           </div>
         </div>
         <div className="mt-[2vh] md:mt-[6vh] flex flex-col items-center gap-1 w-fit">

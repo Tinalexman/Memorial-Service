@@ -26,9 +26,10 @@ const Library = () => {
             LIBRARY
           </h1>
           <p className="font-normal text-tertiary-100 text-[20px] leading-[30px] md:text-center">
-            Lorem ipsum dolor sit amet, cons piscing elit lorem ipsumsit. Lorem
-            ipsum dolor sit amet, cons piscing elit lorem ipsumsit. Lorem ipsum
-            dolor sit amet.
+            This section is a digital archive, meticulously curated to honor
+            Professor Jacob Adeleke Fayomi&apos;s legacy. It features a selection of books authored by the
+            professor, each one a testament to his expertise and dedication to
+            his field.
           </p>
         </div>
         <div className="w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 absolute -bottom-10 md:hidden right-[10%] md:my-20">

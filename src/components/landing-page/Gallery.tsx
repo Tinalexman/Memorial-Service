@@ -423,12 +423,13 @@ const Gallery = () => {
             GALLERY
           </h1>
           <p className="font-normal text-primary-10 text-[20px] leading-[30px] md:text-center">
-            Lorem ipsum dolor sit amet, cons piscing elit lorem ipsumsit. Lorem
-            ipsum dolor sit amet, cons piscing elit lorem ipsumsit. Lorem ipsum
-            dolor sit amet.
+            This section is a heartfelt tribute to the life and work of Professor Jacob Adeleke Fayomi. This
+            digital space is a curated collection of images that capture the
+            essence of the professor&apos;s life, achievements, and the moments that
+            defined his journey.
           </p>
         </div>
-        <div className="w-[224px] h-[100px] flex items-center justify-between md:hidden">
+        {/* <div className="w-[224px] h-[100px] flex items-center justify-between md:hidden">
           <div
             onClick={() => {
               setSlideIndex(slideIndex === 0 ? 3 : slideIndex - 1);
@@ -445,7 +446,7 @@ const Gallery = () => {
           >
             <GoArrowRight size={"26px"} />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="relative flex overflow-x-hidden w-full mt-20 md:hidden">
         <motion.div
