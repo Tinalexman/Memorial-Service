@@ -173,7 +173,7 @@ const Tributes = () => {
   return (
     <div
       id="tribute-div"
-      className="w-[100vw] px-[200px] md:px-[5%] bg-white py-24 md:py-16 flex flex-col items-center gap-24 md:gap-20"
+      className="w-[100vw] px-[200px] md:px-[5%] bg-white py-24 md:py-16 flex flex-col items-center gap-24 md:gap-20 transition-all ease-in-out duration-500"
     >
       <div className="flex items-start w-full justify-between">
         <h1 className="text-[100px] md:text-[60px] text-tertiary-100 leading-[100px] font-extrabold md:text-center">
@@ -192,7 +192,7 @@ const Tributes = () => {
           <div
             onClick={() => {
               setDirection(1);
-              setIndex(index < tributes.length - 2 ? index + 1 : index);
+              setIndex(index < tributes.length - 1 ? index + 1 : index);
             }}
             className="size-[100px] text-tertiary-100 border border-tertiary-100 hover:text-primary-10 hover:bg-tertiary-100 rounded-full flex items-center justify-center cursor-pointer transition-all ease-out duration-300"
           >
@@ -207,11 +207,22 @@ const Tributes = () => {
           x: [direction === -1 ? "-100%" : "100%", "0%"],
           transition: {
             ease: "easeOut",
-            duration: 2,
+            duration: 0.75,
           },
         }}
         className="flex flex-col gap-5 w-full items-start"
-      ></motion.div>
+      >
+        <h2 className="font-semibold text-[20px] md:text-[16px] leading-[30px] md:leading-[24px] text-tertiary-80 md:text-center">{tributes[index].title}</h2>
+
+        <p className="font-normal text-tertiary-100 text-[20px] leading-[30px] md:text-center">
+          {tributes[index].content}
+        </p>
+
+        <h3 className="font-bold text-[18px] md:text-[16px] leading-[24px] text-tertiary-80 md:text-center">
+          {tributes[index].author} <br /><span>{tributes[index].subText && tributes[index].subText}</span>
+        </h3>
+
+      </motion.div>
     </div>
   );
 };
