@@ -514,7 +514,7 @@ const ImageContainer: FC<iImageProp> = ({ image }) => {
         onMouseLeave={() => {
           setShow(false);
         }}
-        className="w-[22.5%] md:w-full h-[320px] overflow-hidden rounded-[12px] cursor-pointer flex justify-center items-center relative"
+        className="w-[23%] md:w-full h-[320px] overflow-hidden rounded-[12px] cursor-pointer flex justify-center items-center relative"
       >
         <Image
           src={image}

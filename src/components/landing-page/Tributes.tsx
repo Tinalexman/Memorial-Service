@@ -175,7 +175,7 @@ const Tributes = () => {
       id="tribute-div"
       className="w-[100vw] px-[200px] md:px-[5%] bg-white py-24 md:py-16 flex flex-col items-center gap-24 md:gap-20 transition-all ease-in-out duration-500"
     >
-      <div className="flex items-start w-full justify-between">
+      <div className="flex md:flex-col items-center w-full justify-between">
         <h1 className="text-[100px] md:text-[60px] text-tertiary-100 leading-[100px] font-extrabold md:text-center">
           TRIBUTES
         </h1>
@@ -183,7 +183,7 @@ const Tributes = () => {
           <div
             onClick={() => {
               setDirection(-1);
-              setIndex(index > 0 ? index - 1 : index);
+              setIndex(index === 0 ? tributes.length - 1 : index - 1);
             }}
             className="size-[100px] text-tertiary-100 border border-tertiary-100 hover:text-primary-10 hover:bg-tertiary-100 rounded-full flex items-center justify-center cursor-pointer transition-all ease-out duration-300"
           >
@@ -192,7 +192,7 @@ const Tributes = () => {
           <div
             onClick={() => {
               setDirection(1);
-              setIndex(index < tributes.length - 1 ? index + 1 : index);
+              setIndex(index === tributes.length - 1 ? 0 : index + 1);
             }}
             className="size-[100px] text-tertiary-100 border border-tertiary-100 hover:text-primary-10 hover:bg-tertiary-100 rounded-full flex items-center justify-center cursor-pointer transition-all ease-out duration-300"
           >
@@ -210,19 +210,51 @@ const Tributes = () => {
             duration: 0.75,
           },
         }}
-        className="flex flex-col gap-5 w-full items-start"
+        className="flex flex-col md:items-center gap-5 w-full items-start"
       >
-        <h2 className="font-semibold text-[20px] md:text-[16px] leading-[30px] md:leading-[24px] text-tertiary-80 md:text-center">{tributes[index].title}</h2>
+        <h2 className="font-semibold text-[20px] md:text-[16px] leading-[30px] md:leading-[24px] text-tertiary-80 md:text-center">
+          {tributes[index].title}
+        </h2>
 
         <p className="font-normal text-tertiary-100 text-[20px] leading-[30px] md:text-center">
           {tributes[index].content}
         </p>
 
         <h3 className="font-bold text-[18px] md:text-[16px] leading-[24px] text-tertiary-80 md:text-center">
-          {tributes[index].author} <br /><span>{tributes[index].subText && tributes[index].subText}</span>
+          {tributes[index].author} <br />
+          <span>{tributes[index].subText && tributes[index].subText}</span>
         </h3>
-
       </motion.div>
+      <div className="w-full md:flex items-center justify-center gap-10 hidden">
+        <div
+          onClick={() => {
+            setDirection(-1);
+            setIndex(index === 0 ? tributes.length - 1 : index - 1);
+            const element: HTMLElement | null =
+                document.getElementById("tribute-div");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+          }}
+          className="size-[60px] text-tertiary-100 border border-tertiary-100 hover:text-primary-10 hover:bg-tertiary-100 rounded-full flex items-center justify-center cursor-pointer transition-all ease-out duration-300"
+        >
+          <GoArrowLeft size={"20px"} />
+        </div>
+        <div
+          onClick={() => {
+            setDirection(1);
+            setIndex(index === tributes.length - 1 ? 0 : index + 1);
+            const element: HTMLElement | null =
+                document.getElementById("tribute-div");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+          }}
+          className="size-[60px] text-tertiary-100 border border-tertiary-100 hover:text-primary-10 hover:bg-tertiary-100 rounded-full flex items-center justify-center cursor-pointer transition-all ease-out duration-300"
+        >
+          <GoArrowRight size={"20px"} />
+        </div>
+      </div>
     </div>
   );
 };
