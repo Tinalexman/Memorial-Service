@@ -2,7 +2,6 @@
 
 import React from "react";
 import Banner from "./Banner";
-import Loader from "../resuable/Loader";
 import Biography from "./Biography";
 import Announcement from "./Announcement";
 import Stories from "./Stories";
@@ -10,11 +9,15 @@ import Library from "./Library";
 import Gallery from "./Gallery";
 import Footer from "../resuable/Footer";
 import Tributes from "./Tributes";
+import { useLoadStore } from "@/src/stores/store";
+import Loader from "../resuable/Loader";
 
-const LandingPage = async () => {
-  //await new Promise((resolve) => setTimeout(resolve, 5000));
+const LandingPage = () => {
+  const ready = useLoadStore((state) => state.ready);
 
-  return (
+  return !ready ? (
+    <Loader />
+  ) : (
     <div className="overflow-x-hidden">
       <Banner />
       <Biography />
