@@ -1,82 +1,27 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import React, { FC, useState, useEffect, useRef } from "react";
+import React, { FC, useState, useRef } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
-import { IoMdClose } from "react-icons/io";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import DoveMarquee from "../resuable/DoveMarquee";
 
 import { motion, useInView } from "framer-motion";
 
 import R11 from "@/public/landing-page/Row 1/JBI_0981.jpg";
-import R12 from "@/public/landing-page/Row 1/JBI_1045.jpg";
+import R12 from "@/public/landing-page/Row 1/JBI_1298.jpg";
 import R13 from "@/public/landing-page/Row 1/JBI_1074.jpg";
-import R14 from "@/public/landing-page/Row 1/JBI_1084.jpg";
-import R15 from "@/public/landing-page/Row 1/JBI_1235.jpg";
-import R16 from "@/public/landing-page/Row 1/JBI_1298.jpg";
-import R17 from "@/public/landing-page/Row 1/JBI_1438.jpg";
-import R18 from "@/public/landing-page/Row 1/JBI_2836.jpg";
-import R19 from "@/public/landing-page/Row 1/JBI_2839.jpg";
-import R110 from "@/public/landing-page/Row 1/JBI_2901.jpg";
-import R111 from "@/public/landing-page/Row 1/JBI_2937.jpg";
-import R112 from "@/public/landing-page/Row 1/JBI_2939.jpg";
-import R113 from "@/public/landing-page/Row 1/JBI_3441.jpg";
-import R114 from "@/public/landing-page/Row 1/JBI_3442.jpg";
-import R115 from "@/public/landing-page/Row 1/JBI_3453.jpg";
-import R116 from "@/public/landing-page/Row 1/JBI_3465.jpg";
+import R14 from "@/public/landing-page/Row 1/JBI_2901.jpg";
 
-import R21 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_1.jpg";
-import R22 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_3.jpg";
-import R23 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_4.jpg";
+import R21 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_1 (1).jpg";
+import R22 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_3 (1).jpg";
+import R23 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_22.jpg";
 import R24 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_5.jpg";
-import R25 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_6.jpg";
-import R26 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_7.jpg";
-import R27 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_8.jpg";
-import R28 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_9.jpg";
-import R29 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_10.jpg";
-import R210 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_11.jpg";
-import R211 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_12.jpg";
-import R212 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_14.jpg";
-import R213 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_16.jpg";
-import R214 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_17.jpg";
-import R215 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_18.jpg";
-import R216 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_19.jpg";
-// import R217 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_20.jpg";
-// import R218 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_21.jpg";
-// import R219 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_22.jpg";
-// import R220 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_23.jpg";
-// import R221 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_24.jpg";
-// import R222 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_25.jpg";
-// import R223 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_27.jpg";
-// import R224 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_29.jpg";
-// import R225 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_30.jpg";
-// import R226 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_31.jpg";
-// import R227 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_32.jpg";
-// import R228 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_33.jpg";
-// import R229 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_34.jpg";
-// import R230 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_35.jpg";
-// import R231 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_36.jpg";
-// import R232 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_38.jpg";
-// import R233 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_39.jpg";
 
-// import R3 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_1.jpg";
-import R31 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_2.jpg";
+import R31 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_9 (1).jpg";
 import R32 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_3.jpg";
-import R33 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_4.jpg";
+import R33 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_4 (1).jpg";
 import R34 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_5.jpg";
-import R35 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_6.jpg";
-import R36 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_7.jpg";
-import R37 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_8.jpg";
-import R38 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_9.jpg";
-import R39 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_10.jpg";
-import R310 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_11.jpg";
-import R311 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_12.jpg";
-import R312 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_13.jpg";
-import R313 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_40.jpg";
-import R314 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_41.jpg";
-import R315 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_42.jpg";
-import R316 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_43.jpg";
 
 import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
@@ -180,22 +125,28 @@ const Gallery = () => {
     >
       <div className="flex w-full justify-between px-[200px] py-24 md:py-16 md:px-[5%]">
         <div className="flex flex-col gap-5 md:gap-4 w-[50%] md:w-full ">
-          <motion.h1 animate={{
+          <motion.h1
+            animate={{
               x: inView ? "0%" : "-20%",
               transition: {
                 duration: 1.5,
                 ease: "easeOut",
               },
-            }} className="text-[100px] md:text-[60px] text-primary-10 leading-[100px] font-extrabold md:text-center">
+            }}
+            className="text-[100px] md:text-[60px] text-primary-10 leading-[100px] font-extrabold md:text-center"
+          >
             GALLERY
           </motion.h1>
-          <motion.p animate={{
+          <motion.p
+            animate={{
               x: inView ? "0%" : "20%",
               transition: {
                 duration: 1.5,
                 ease: "easeOut",
               },
-            }} className="font-normal text-primary-10 text-[20px] leading-[30px] md:text-center">
+            }}
+            className="font-normal text-primary-10 text-[20px] leading-[30px] md:text-center"
+          >
             This section is a heartfelt tribute to the life and work of
             Professor Jacob Adeleke Fayomi. This digital space is a curated
             collection of images that capture the essence of the

@@ -4,6 +4,10 @@ import DonateButton from "../resuable/DonateButton";
 
 import Image from "next/image";
 import R11 from "@/public/landing-page/R13.png";
+import R14 from "@/public/landing-page/Row 1/JBI_2901.jpg";
+import R23 from "@/public/landing-page/Row 2/CamScanner 03-31-2024 14.11_22.jpg";
+import R31 from "@/public/landing-page/Row 3/CamScanner 04-06-2024 09.54_3.jpg";
+
 
 import { motion, useInView } from "framer-motion";
 
@@ -68,7 +72,7 @@ const Stories = () => {
           }}
           className="w-[50%] md:w-full h-[250px] overflow-hidden bg-tertiary-15 rounded-bl-[12px] rounded-tr-[12px] rounded-br-[60px] rounded-tl-[60px] relative flex items-center justify-center"
         >
-          <Image src={R11} alt="image" className="w-full h-full object-cover" />
+          <Image src={R14} alt="image" className="w-full h-full object-cover" />
           <div className="w-[144px] h-[144px] rounded-full bg-secondary-20  text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex flex-col justify-center items-center gap-2 absolute">
             <h3 className="text-[#A27E82] font-extrabold text-[10px] leading-[15px]">
               CHURCH
@@ -92,7 +96,7 @@ const Stories = () => {
           className="w-[50%] md:w-full h-[250px] overflow-hidden bg-tertiary-15 rounded-tr-[12px] rounded-bl-[12px] rounded-tl-[60px] rounded-br-[60px] relative flex items-center justify-center"
         >
           <Image
-            src={R11}
+            src={R23}
             alt="image"
             className="w-full h-full object-cover"
           />
@@ -117,7 +121,7 @@ const Stories = () => {
           className="w-[50%] md:w-full h-[250px] overflow-hidden rounded-tl-[12px] rounded-br-[12px] rounded-tr-[60px] rounded-bl-[60px] relative flex items-center justify-center"
         >
           <Image
-            src={R11}
+            src={R31}
             alt="image"
             className="w-full h-full object-cover"
           />
