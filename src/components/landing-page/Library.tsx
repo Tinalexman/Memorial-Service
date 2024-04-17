@@ -56,13 +56,13 @@ const Library = () => {
             to his expertise and dedication to his field.
           </motion.p>
         </div>
-        <div className="w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 absolute -bottom-10 md:hidden right-[10%] md:my-20">
+        {/* <div className="w-[210px] md:w-[150px] h-[210px] md:h-[150px] rounded-full bg-tertiary-100 cursor-pointer text-white text-[20px] md:text-[16px] leading-[30px] md:leading-[20.5px] flex justify-center items-center gap-1 absolute -bottom-10 md:hidden right-[10%] md:my-20">
           <p>Read more</p>
           <BsArrowUpRight size={"16px"} />
-        </div>
+        </div> */}
       </div>
 
-      <div className="flex flex-col md:gap-[60px]">
+      {/* <div className="flex flex-col md:gap-[60px]">
         {books.map((book, i) => {
           return (
             <motion.div
@@ -91,7 +91,7 @@ const Library = () => {
             </motion.div>
           );
         })}
-      </div>
+      </div> */}
 
       <div className="md:flex hidden flex-col gap-[60px] w-full items-center">
         <ReadMoreContainer
